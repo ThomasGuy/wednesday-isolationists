@@ -7,7 +7,7 @@ const ALL_FILES_QUERY = graphql`
         node {
           frontmatter {
             artist
-            title
+            subject
           }
         }
       }
@@ -17,14 +17,14 @@ const ALL_FILES_QUERY = graphql`
 
 const useLists = () => {
   let artists = new Set()
-  let titles = new Set()
+  let subjects = new Set()
   const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY)
   allMarkdownRemark.edges.forEach(edge => {
     artists.add(edge.node.frontmatter.artist)
-    titles.add(edge.node.frontmatter.title)
+    subjects.add(edge.node.frontmatter.subject)
   })
 
-  return [[...artists], [...titles]]
+  return [[...artists], [...subjects]]
 }
 
 export default useLists

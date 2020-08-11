@@ -5,7 +5,7 @@ const PictureBox = ({ fluid, alt, meta }) => {
   return (
     <div>
       <h3>
-        {meta.title} {meta.slug}
+        {meta.subject} {meta.slug}
       </h3>
       <Img fluid={fluid} alt={alt} />
     </div>

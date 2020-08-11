@@ -33,7 +33,7 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            title
+            subject
             slug
             artist
             date

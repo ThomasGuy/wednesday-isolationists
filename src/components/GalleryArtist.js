@@ -59,7 +59,7 @@ export const artistQuery = graphql`
         node {
           frontmatter {
             artist
-            title
+            subject
             slug
           }
         }

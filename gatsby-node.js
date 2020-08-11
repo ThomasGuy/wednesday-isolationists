@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions }) => {
               id
               frontmatter {
                 artist
-                title
+                subject
                 slug
                 date
               }
@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
       // get alist of all Artists and all Subjects
       results.data.allMarkdownRemark.edges.forEach(({ node }) => {
         artists.add(node.frontmatter.artist)
-        subjects.add(node.frontmatter.title)
+        subjects.add(node.frontmatter.subject)
       })
 
       // Create content for each Artist page
@@ -57,7 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
       subjectList.forEach(subject => {
         // foreach subject get a list of all graphQL nodes
         subjectNodes = results.data.allMarkdownRemark.edges.filter(
-          ({ node }) => node.frontmatter.title === subject
+          ({ node }) => node.frontmatter.subject === subject
         )
 
         createPage({
