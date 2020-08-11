@@ -1,12 +1,14 @@
+// N.B. from Sporty in reducer variable 'bun' is current as in 'current bun'
+
 const path = require("path")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    let artists = new Set()
-    let subjects = new Set()
-    let artNodes = []
+    let artists = new Set() // all Artists
+    let subjects = new Set() // all Subjects
+    let artNodes = [] // graphQL nodes
     let subjectNodes = []
     graphql(`
       {
@@ -41,11 +43,11 @@ exports.createPages = ({ graphql, actions }) => {
 
         createPage({
           path: `/artists/${artist}`,
-          component: path.resolve("./src/components/GalleryArtist.js"),
+          component: path.resolve("./src/components/Gallery.js"),
           context: {
             artist: `${artist}`,
-            slugs: artNodes.reduce(function (acc, current) {
-              acc.push(current.node.frontmatter.slug)
+            slugs: artNodes.reduce(function (acc, bun) {
+              acc.push(bun.node.frontmatter.slug)
               return acc
             }, []),
           },
@@ -62,11 +64,11 @@ exports.createPages = ({ graphql, actions }) => {
 
         createPage({
           path: `/subjects/${subject}`,
-          component: path.resolve("./src/components/GallerySubject.js"),
+          component: path.resolve("./src/components/Gallery.js"),
           context: {
             subject: `${subject}`,
-            slugs: subjectNodes.reduce(function (acc, current) {
-              acc.push(current.node.frontmatter.slug)
+            slugs: subjectNodes.reduce(function (acc, bun) {
+              acc.push(bun.node.frontmatter.slug)
               return acc
             }, []),
           },

@@ -5,8 +5,8 @@ import PictureBox from "./PictureBox"
 import Layout from "./Layout"
 
 const GalleryArtist = ({ data }) => {
-  const imageData = data.allMarkdownRemark.edges.reduce((acc, current) => {
-    acc[current.node.frontmatter.slug] = current.node.frontmatter
+  const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
+    acc[bun.node.frontmatter.slug] = bun.node.frontmatter
     return acc
   }, {})
   const renderGallery = () => {
@@ -68,12 +68,12 @@ export const artistQuery = graphql`
   }
 `
 
-export const fluidImage = graphql`
-  fragment fluidImage on File {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-`
+// export const fluidImage = graphql`
+//   fragment fluidImage on File {
+//     childImageSharp {
+//       fluid(maxWidth: 1000) {
+//         ...GatsbyImageSharpFluid
+//       }
+//     }
+//   }
+// `
