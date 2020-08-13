@@ -1,14 +1,21 @@
 import React from "react"
 import Img from "gatsby-image"
+import styled from "styled-components"
 
-const PictureBox = ({ fluid, alt, meta }) => {
+const PictureStyles = styled.div`
+  max-width: 300px;
+  height: auto;
+  text-align: center;
+`
+
+const PictureBox = ({ fluid, alt, meta, location }) => {
   return (
-    <div>
-      <h3>
-        {meta.subject} {meta.slug}
-      </h3>
-      <Img fluid={fluid} alt={alt} />
-    </div>
+    <>
+      <p>{location.pathname}</p>
+      <PictureStyles>
+        <Img fluid={fluid} alt={alt} />
+      </PictureStyles>
+    </>
   )
 }
 

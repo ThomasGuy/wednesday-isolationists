@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/artists/${artist}`,
           component: path.resolve("./src/components/Gallery.js"),
           context: {
-            artist: `${artist}`,
+            title: `${artist}`,
             slugs: artNodes.reduce(function (acc, bun) {
               acc.push(bun.node.frontmatter.slug)
               return acc
@@ -66,7 +66,7 @@ exports.createPages = ({ graphql, actions }) => {
           path: `/subjects/${subject}`,
           component: path.resolve("./src/components/Gallery.js"),
           context: {
-            subject: `${subject}`,
+            title: `${subject}`,
             slugs: subjectNodes.reduce(function (acc, bun) {
               acc.push(bun.node.frontmatter.slug)
               return acc
