@@ -7,16 +7,17 @@ import Layout from "./Layout"
 
 const GalleryLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 30px;
+  ${"" /* grid-auto-rows: 15px; */}
 
   @media screen and (min-width: 468px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    ${"" /* grid-template-columns: 1fr 1fr 1fr; */}
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 40px;
+    ${"" /* grid-template-columns: 1fr 1fr 1fr 1fr; */}
+    ${"" /* grid-gap: 40px; */}
   }
 `
 
