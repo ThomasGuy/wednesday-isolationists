@@ -1,41 +1,47 @@
-import React from "react"
-import { graphql } from "gatsby"
-import styled from "styled-components"
+import React from 'react'
+import {graphql} from 'gatsby'
+import styled from 'styled-components'
 
-import PictureBox from "./PictureBox"
-import Layout from "./Layout"
+import PictureBox from './PictureBox'
+import Layout from './Layout'
 
 const GalleryLayout = styled.div`
+  color: white;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 30px;
-  ${"" /* grid-auto-rows: 15px; */}
+  grid-gap: 20px;
+  margin: 0 auto;
+  ${'' /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */}
 
-  @media screen and (min-width: 468px) {
-    ${"" /* grid-template-columns: 1fr 1fr 1fr; */}
+  @media screen and (min-width: 320px) {
+    grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: 768px) {
-    ${"" /* grid-template-columns: 1fr 1fr 1fr 1fr; */}
-    ${"" /* grid-gap: 40px; */}
+  @media screen and (min-width: 478px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+  }
+
+  @media screen and (min-width: 868px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
   }
 `
 
-const Gallery = ({ data, location }) => {
+const Gallery = ({data, location: {pathname}}) => {
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
     acc[bun.node.frontmatter.slug] = bun.node.frontmatter
     return acc
   }, {})
 
   const renderGallery = () => {
-    return data.allFile.edges.map(({ node }) => {
+    return data.allFile.edges.map(({node}) => {
       return (
         <div key={node.id}>
           <PictureBox
             fluid={node.childImageSharp.fluid}
-            alt={node.relativePath.split(".")[0]}
+            alt={node.relativePath.split('.')[0]}
             meta={imageData[node.relativePath]}
-            location={location}
+            pathname={pathname}
           />
         </div>
       )
@@ -44,12 +50,18 @@ const Gallery = ({ data, location }) => {
 
   const title = () => {
     const value = Object.values(imageData)[0]
-    return location.pathname.includes("artists") ? value.artist : value.subject
+    return pathname.includes('artists') ? value.artist : value.subject
   }
+
+  const Title = styled.div`
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 3rem;
+  `
 
   return (
     <Layout>
-      <h1>{title()}</h1>
+      <Title>{title()}</Title>
       <GalleryLayout>{renderGallery()}</GalleryLayout>
     </Layout>
   )
@@ -63,7 +75,7 @@ export default Gallery
 export const artistQuery = graphql`
   query galleryQuery($slugs: [String!]!) {
     allFile(
-      filter: { extension: { regex: "/(jpg)/" }, relativePath: { in: $slugs } }
+      filter: {extension: {regex: "/(jpg)/"}, relativePath: {in: $slugs}}
     ) {
       edges {
         node {
@@ -82,7 +94,7 @@ export const artistQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: { frontmatter: { slug: { in: $slugs } } }) {
+    allMarkdownRemark(filter: {frontmatter: {slug: {in: $slugs}}}) {
       edges {
         node {
           frontmatter {

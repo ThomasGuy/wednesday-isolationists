@@ -1,0 +1,16 @@
+week 3
+Herbs and condiments
+
+Charles:
+Gil    :
+Jan	:
+
+Judy	:38 x 29cm
+Margaret :36 x 36cm
+Margot	:
+Sally	:30 x 30cm
+Sally 2 :30 x 30cm
+Suzanne:
+
+week: 'week3'
+subject: 'Herbs and Condiments'
