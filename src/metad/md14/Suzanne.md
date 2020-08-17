@@ -1,8 +1,8 @@
 ---
-subject: 'Complementary colours'
-week: 'week15'
+subject: 'Smells'
+week: 'week14'
 date: '2020-06-10'
 artist: 'Suzanne'
 dimensions: ''
-slug: 'week15/Suzanne.jpg'
+slug: 'week14/Suzanne.jpg'
 ---

@@ -15,7 +15,7 @@ const AniNav = styled(animated.div)`
   a {
     display: block;
     text-align: left;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     text-decoration: none;
     transition: 0.3s ease border;

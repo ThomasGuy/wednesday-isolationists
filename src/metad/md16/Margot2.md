@@ -2,7 +2,7 @@
 subject: 'Trees'
 week: 'week16'
 date: '2020-06-24'
-artist: 'Matgot'
+artist: 'Margot'
 dimensions: ''
-slug: 'week16/Matgot2.jpg'
+slug: 'week16/Margot2.jpg'
 ---

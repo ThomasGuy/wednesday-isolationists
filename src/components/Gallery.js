@@ -57,6 +57,7 @@ const Gallery = ({data, location: {pathname}}) => {
     text-align: center;
     margin-top: 1rem;
     font-size: 3rem;
+    font-weight: 900;
   `
 
   return (
