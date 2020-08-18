@@ -1,14 +1,26 @@
 import React, {useState} from 'react'
 import {useSpring} from 'react-spring'
 import styled from 'styled-components'
-import {Link} from 'gatsby'
+import {Link, graphql, useStaticQuery} from 'gatsby'
 
 import GlobalStyles from './globalStyles'
 import Nav from './Nav'
 import useLists from '../hooks/useLists'
 import SEO from './seo'
 
+const ISOLATIONISTS = graphql`
+  query {
+    site {
+      siteMetadata {
+        description
+        title
+      }
+    }
+  }
+`
+
 const Layout = ({children}) => {
+  const data = useStaticQuery(ISOLATIONISTS)
   const [artists, subjects] = useLists()
   const [isArtListOpen, setArtListOpen] = useState(false)
   const [isSubListOpen, setSubListOpen] = useState(false)
@@ -62,7 +74,10 @@ const Layout = ({children}) => {
   return (
     <>
       <GlobalStyles />
-      <SEO title={'Wednesday Isolationists'} />
+      <SEO
+        title={data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
+      />
       <Header>
         <button className="items">
           <Link to="/">Home</Link>

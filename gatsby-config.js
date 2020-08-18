@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Meta`,
-    description: `This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Wednesday Isolationists`,
+    description: `A collective of UK Artists had no name before the Covid Lockdown, but with this new way of working from home they became the 'Wednesday Isolationists'`,
+    author: `TWGuy`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
