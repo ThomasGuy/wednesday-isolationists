@@ -8,10 +8,8 @@ import Layout from './Layout'
 const GalleryLayout = styled.div`
   color: white;
   display: grid;
-  ${'' /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */}
   grid-template-columns: 1fr;
   grid-gap: 30px;
-  ${'' /* grid-auto-rows: 15px; */}
 
   @media screen and (min-width: 320px) {
     grid-template-columns: 1fr 1fr;
@@ -55,9 +53,13 @@ const Gallery = ({data, location}) => {
 
   const Title = styled.div`
     text-align: center;
-    margin-top: 1rem;
-    font-size: 3rem;
+    margin: 1rem;
+    font-size: 2rem;
     font-weight: 900;
+
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+    }
   `
 
   return (

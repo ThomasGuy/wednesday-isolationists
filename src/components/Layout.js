@@ -6,6 +6,7 @@ import {Link} from 'gatsby'
 import GlobalStyles from './globalStyles'
 import Nav from './Nav'
 import useLists from '../hooks/useLists'
+import SEO from './seo'
 
 const Layout = ({children}) => {
   const [artists, subjects] = useLists()
@@ -39,25 +40,30 @@ const Layout = ({children}) => {
   const Header = styled.header`
     display: flex;
     justify-content: center;
+    flex-flow: wrap;
 
     .items {
+      min-width: 100px;
       max-width: 180px;
-      margin: 0 5px;
+      margin: 5px;
       background-color: purple;
       border-radius: 20px;
       flex: 1 1 auto;
-      box-shadow: 2px 4px #b9b3b3;
-    }
+      box-shadow: 2px 4px #b9b3b3aa;
+      color: lightgrey;
 
-    a {
-      text-decoration: none;
-      color: black;
+      a {
+        text-decoration: none;
+        color: lightgrey;
+        ${'' /* font-weight: bold; */}
+      }
     }
   `
 
   return (
     <>
       <GlobalStyles />
+      <SEO title={'Wednesday Isolationists'} />
       <Header>
         <button className="items">
           <Link to="/">Home</Link>

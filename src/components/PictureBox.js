@@ -8,7 +8,13 @@ const PictureStyles = styled.div`
   text-align: center;
 
   @media screen and (min-width: 768px) {
-    max-width: 350px;
+    max-width: 300px;
+  }
+
+  p {
+    margin-top: 0.2rem;
+    font-size: 0.8rem;
+    opacity: 0.8;
   }
 `
 
