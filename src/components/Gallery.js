@@ -100,6 +100,7 @@ export const artistQuery = graphql`
         node {
           frontmatter {
             artist
+            dimensions
             subject
             slug
           }

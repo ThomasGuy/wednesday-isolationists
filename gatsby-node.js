@@ -1,9 +1,9 @@
 // N.B. from Sporty in reducer variable 'bun' is current as in 'current bun'
 
-const path = require("path")
+const path = require('path')
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
+exports.createPages = ({graphql, actions}) => {
+  const {createPage} = actions
 
   return new Promise((resolve, reject) => {
     let artists = new Set() // all Artists
@@ -19,6 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
               frontmatter {
                 artist
                 subject
+                dimensions
                 slug
                 date
               }
@@ -28,7 +29,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     `).then(results => {
       // get alist of all Artists and all Subjects
-      results.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      results.data.allMarkdownRemark.edges.forEach(({node}) => {
         artists.add(node.frontmatter.artist)
         subjects.add(node.frontmatter.subject)
       })
@@ -38,12 +39,12 @@ exports.createPages = ({ graphql, actions }) => {
       artistList.forEach(artist => {
         // forach Artist get a list of all graphQL nodes
         artNodes = results.data.allMarkdownRemark.edges.filter(
-          ({ node }) => node.frontmatter.artist === artist
+          ({node}) => node.frontmatter.artist === artist,
         )
 
         createPage({
           path: `/artists/${artist}`,
-          component: path.resolve("./src/components/Gallery.js"),
+          component: path.resolve('./src/components/Gallery.js'),
           context: {
             title: `${artist}`,
             slugs: artNodes.reduce(function (acc, bun) {
@@ -59,12 +60,12 @@ exports.createPages = ({ graphql, actions }) => {
       subjectList.forEach(subject => {
         // foreach subject get a list of all graphQL nodes
         subjectNodes = results.data.allMarkdownRemark.edges.filter(
-          ({ node }) => node.frontmatter.subject === subject
+          ({node}) => node.frontmatter.subject === subject,
         )
 
         createPage({
           path: `/subjects/${subject}`,
-          component: path.resolve("./src/components/Gallery.js"),
+          component: path.resolve('./src/components/Gallery.js'),
           context: {
             title: `${subject}`,
             slugs: subjectNodes.reduce(function (acc, bun) {

@@ -11,6 +11,7 @@ const Layout = ({children}) => {
   const [artistOpen, setArtistOpen] = useState(false)
   const [subjectOpen, setSubjectOpen] = useState(false)
   const [artists, subjects] = useLists()
+  console.log('lists', artists, subjects)
 
   const artistList = artists.map((artist, idx) => {
     return (
