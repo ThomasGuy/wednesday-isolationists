@@ -12,7 +12,7 @@ const PictureStyles = styled.div`
   }
 `
 
-const PictureBox = ({fluid, alt, meta, location}) => {
+const PictureBox = ({fluid, alt, meta, pathname}) => {
   return (
     <>
       <PictureStyles>

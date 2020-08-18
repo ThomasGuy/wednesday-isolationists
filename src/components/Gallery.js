@@ -41,7 +41,7 @@ const Gallery = ({data, location}) => {
             fluid={node.childImageSharp.fluid}
             alt={node.relativePath.split('.')[0]}
             meta={imageData[node.relativePath]}
-            pathname={pathname}
+            pathname={location.pathname}
           />
         </div>
       )
