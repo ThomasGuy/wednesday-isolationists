@@ -8,26 +8,26 @@ import Layout from './Layout'
 const GalleryLayout = styled.div`
   color: white;
   display: grid;
-  grid-gap: 20px;
-  margin: 0 auto;
   ${'' /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */}
+  grid-template-columns: 1fr;
+  grid-gap: 30px;
+  ${'' /* grid-auto-rows: 15px; */}
 
   @media screen and (min-width: 320px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (min-width: 478px) {
+  @media screen and (min-width: 538px) {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
   }
 
-  @media screen and (min-width: 868px) {
+  @media screen and (min-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 40px;
   }
 `
 
-const Gallery = ({data, location: {pathname}}) => {
+const Gallery = ({data, location}) => {
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
     acc[bun.node.frontmatter.slug] = bun.node.frontmatter
     return acc
@@ -50,7 +50,7 @@ const Gallery = ({data, location: {pathname}}) => {
 
   const title = () => {
     const value = Object.values(imageData)[0]
-    return pathname.includes('artists') ? value.artist : value.subject
+    return location.pathname.includes('artists') ? value.artist : value.subject
   }
 
   const Title = styled.div`

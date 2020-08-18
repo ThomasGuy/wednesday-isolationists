@@ -3,21 +3,16 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const PictureStyles = styled.div`
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
+  max-width: 280px;
   height: auto;
   text-align: center;
-  margin: 1rem auto;
 
-  p {
-    padding-top: 0.2rem;
-    font-size: 0.8rem;
-    color: lightgrey;
+  @media screen and (min-width: 768px) {
+    max-width: 350px;
   }
 `
 
-const PictureBox = ({fluid, alt, meta, pathname}) => {
+const PictureBox = ({fluid, alt, meta, location}) => {
   return (
     <>
       <PictureStyles>
