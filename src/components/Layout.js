@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 import {useSpring} from 'react-spring'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import {Link, graphql, useStaticQuery} from 'gatsby'
 
 import GlobalStyles from './globalStyles'
 import Nav from './Nav'
 import useLists from '../hooks/useLists'
 import SEO from './seo'
+import Header from './Header'
 
 const ISOLATIONISTS = graphql`
   query {
@@ -49,28 +50,6 @@ const Layout = ({children}) => {
       : `translate3d(-100%,0,0) scale(0.6)`,
   })
 
-  const Header = styled.header`
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap;
-
-    .items {
-      min-width: 100px;
-      max-width: 180px;
-      margin: 5px;
-      background-color: purple;
-      border-radius: 20px;
-      flex: 1 1 auto;
-      box-shadow: 2px 4px #b9b3b3aa;
-      color: lightgrey;
-
-      a {
-        text-decoration: none;
-        color: lightgrey;
-      }
-    }
-  `
-
   return (
     <>
       <GlobalStyles />
@@ -78,17 +57,7 @@ const Layout = ({children}) => {
         title={data.site.siteMetadata.title}
         description={data.site.siteMetadata.description}
       />
-      <Header>
-        <button className="items">
-          <Link to="/">Home</Link>
-        </button>
-        <button className="items" onClick={() => setArtListOpen(true)}>
-          Artists
-        </button>
-        <button className="items" onClick={() => setSubListOpen(true)}>
-          Subjects
-        </button>
-      </Header>
+      <Header setArt={setArtListOpen} setSub={setSubListOpen} />
 
       <div>
         <Nav style={showArtList} list={artList} />
