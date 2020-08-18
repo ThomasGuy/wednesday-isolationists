@@ -55,7 +55,6 @@ const Layout = ({children}) => {
       a {
         text-decoration: none;
         color: lightgrey;
-        ${'' /* font-weight: bold; */}
       }
     }
   `
