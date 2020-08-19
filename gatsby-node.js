@@ -22,6 +22,7 @@ exports.createPages = ({graphql, actions}) => {
                 dimensions
                 slug
                 date
+                week
               }
             }
           }

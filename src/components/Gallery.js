@@ -79,14 +79,15 @@ export default Gallery
 export const artistQuery = graphql`
   query galleryQuery($slugs: [String!]!) {
     allFile(
-      filter: {extension: {regex: "/(jpg)/"}, relativePath: {in: $slugs}}
+      filter: {relativePath: {in: $slugs}}
+      sort: {fields: childImageSharp___fluid___aspectRatio, order: DESC}
     ) {
       edges {
         node {
           base
           relativePath
           childImageSharp {
-            fluid(maxWidth: 280) {
+            fluid(maxWidth: 350) {
               aspectRatio
               base64
               sizes
@@ -106,6 +107,8 @@ export const artistQuery = graphql`
             dimensions
             subject
             slug
+            date
+            week
           }
         }
       }
