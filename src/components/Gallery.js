@@ -9,10 +9,10 @@ const GalleryLayout = styled.div`
   color: white;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 20px;
 
   @media screen and (min-width: 576px) {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
   }
 
   @media screen and (min-width: 768px) {

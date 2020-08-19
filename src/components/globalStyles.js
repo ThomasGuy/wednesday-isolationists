@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     color: white;
     background-color: #282c34;
-    max-width: 1280px;
+    max-width: 1380px;
     padding: 0.1rem 0.8rem;
   }
 `

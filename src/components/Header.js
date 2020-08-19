@@ -5,7 +5,7 @@ import {Link} from 'gatsby'
 const Head = styled.header`
   display: flex;
   justify-content: center;
-  flex-flow: wrap;
+  flex-flow: row wrap;
 
   .items {
     min-width: 100px;
