@@ -1,11 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {graphql} from 'gatsby'
 import styled from 'styled-components'
+import {animated, useSpring} from 'react-spring'
 
 import PictureBox from './PictureBox'
 import Layout from './Layout'
+import Modal from './Modal'
 
-const GalleryLayout = styled.div`
+const GalleryLayout = styled(animated.div)`
   color: white;
   display: grid;
   grid-template-columns: 1fr;
@@ -38,21 +40,39 @@ const Title = styled.div`
 `
 
 const Gallery = ({data, location}) => {
+  const [on, toggle] = useState(false)
+  const [index, setIndex] = useState(0)
+  const fader = useSpring({
+    opacity: on ? 0.3 : 1,
+  })
+
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
     acc[bun.node.frontmatter.slug] = bun.node.frontmatter
     return acc
   }, {})
 
+  const thisGallery = data.allFile.edges.map(({node}) => {
+    return (
+      <PictureBox
+        key={node.id}
+        fluid={node.childImageSharp.fluid}
+        alt={node.relativePath.split('.')[0]}
+        meta={imageData[node.relativePath]}
+        pathname={location.pathname}
+      />
+    )
+  })
+
+  const onModalClick = idx => {
+    setIndex(idx)
+    toggle(true)
+  }
+
   const renderGallery = () => {
-    return data.allFile.edges.map(({node}) => {
+    return thisGallery.map((picture, idx) => {
       return (
-        <div key={node.id}>
-          <PictureBox
-            fluid={node.childImageSharp.fluid}
-            alt={node.relativePath.split('.')[0]}
-            meta={imageData[node.relativePath]}
-            pathname={location.pathname}
-          />
+        <div key={picture.key} onClick={() => onModalClick(idx)}>
+          {picture}
         </div>
       )
     })
@@ -66,7 +86,10 @@ const Gallery = ({data, location}) => {
   return (
     <Layout>
       <Title>{title()}</Title>
-      <GalleryLayout>{renderGallery()}</GalleryLayout>
+
+      {!on && <GalleryLayout style={fader}>{renderGallery()}</GalleryLayout>}
+
+      <Modal on={on} toggle={toggle} gallery={thisGallery} index={index} />
     </Layout>
   )
 }

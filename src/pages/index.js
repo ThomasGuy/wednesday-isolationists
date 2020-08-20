@@ -4,7 +4,6 @@ import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
-import SEO from '../components/seo'
 
 const Title = styled.div`
   color: #b88f83;
@@ -51,7 +50,6 @@ export default function Home() {
   const data = useStaticQuery(STUDIO_QUERY)
   return (
     <Layout>
-      <SEO title="Home" />
       <Title>Wednesday Isolationists</Title>
 
       <Img fluid={data.file.childImageSharp.fluid} />

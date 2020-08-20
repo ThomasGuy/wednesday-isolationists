@@ -3,10 +3,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const PictureStyles = styled.div`
-  max-width: 350px;
-  height: auto;
   text-align: center;
-  margin: 0 auto;
 
   p {
     margin-top: 0.2rem;

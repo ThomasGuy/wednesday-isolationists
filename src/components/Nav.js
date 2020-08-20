@@ -4,6 +4,7 @@ import {animated} from 'react-spring'
 
 const AniNav = styled(animated.div)`
   position: fixed;
+  overflow-y: scroll;
   left: 0;
   right: 0;
   top: 0;

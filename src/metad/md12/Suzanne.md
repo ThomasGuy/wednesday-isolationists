@@ -1,8 +1,8 @@
 ---
-subject: 'From an old sketch to a new painting'
-week: 'week13'
+subject: 'It evokes a memory...'
+week: 'week12'
 date: '2020-05-27'
 artist: 'Suzanne'
 dimensions: ''
-slug: 'week13/Suzanne.jpg'
+slug: 'week12/Suzanne.jpg'
 ---
