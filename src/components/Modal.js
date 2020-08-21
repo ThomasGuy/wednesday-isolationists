@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react'
 import styled from 'styled-components'
 import {useTransition, animated} from 'react-spring'
+import useMeasure from '../hooks/useMeasure'
 
 const ModalBase = styled.div`
   position: fixed;
@@ -30,6 +31,8 @@ const Card = styled(animated.div)`
     left: 20px;
     bottom: 0;
     right: 20px;
+    height: auto;
+    width: 80%;
   }
 
   button {
@@ -43,15 +46,22 @@ const Card = styled(animated.div)`
 
 const Modal = ({closeModal, animation, pointerEvents, gallery, index}) => {
   const [idx, setIdx] = useState(index)
+  const [bind, {height}] = useMeasure()
+  console.log('height', height)
 
   const onClick = useCallback(
     () => setIdx(state => (state + 1) % gallery.length),
     [gallery.length],
   )
 
-  const pages = gallery.map(picture => ({style}) => (
-    <animated.div style={{...style}}>{picture}</animated.div>
-  ))
+  const pages = gallery.map(picture => ({style}) => {
+    console.log(picture.props)
+    return (
+      <animated.div style={{...style, maxHeight: height}}>
+        {picture}
+      </animated.div>
+    )
+  })
 
   const nextPicTansition = useTransition(idx, idx => idx, {
     from: {opacity: 0, transform: 'translate3d(-100%,0,0)'},
@@ -61,10 +71,11 @@ const Modal = ({closeModal, animation, pointerEvents, gallery, index}) => {
 
   return (
     <ModalBase style={{pointerEvents}}>
-      <Card style={animation}>
+      <Card {...bind} id="card" style={animation}>
         <div onClick={onClick}>
           {nextPicTansition.map(({item, props: animationPage, key}) => {
             const Page = pages[item]
+
             return <Page key={key} style={animationPage} />
           })}
         </div>
