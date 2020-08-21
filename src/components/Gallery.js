@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import {animated, useSpring} from 'react-spring'
 
 import PictureBox from './PictureBox'
+import ModalBox from './ModalBox'
 import Layout from './Layout'
-import Modal from './Modal'
+import Modal2 from './Modal2'
 
 const GalleryLayout = styled(animated.div)`
   color: white;
@@ -51,11 +52,23 @@ const Gallery = ({data, location}) => {
     return acc
   }, {})
 
-  const thisGallery = data.allFile.edges.map(({node}) => {
+  const thisGalleryFluid = data.allFile.edges.map(({node}) => {
     return (
       <PictureBox
         key={node.id}
         fluid={node.childImageSharp.fluid}
+        alt={node.relativePath.split('.')[0]}
+        meta={imageData[node.relativePath]}
+        pathname={location.pathname}
+      />
+    )
+  })
+
+  const thisGalleryFixed = data.allFile.edges.map(({node}) => {
+    return (
+      <ModalBox
+        key={node.id}
+        fixed={node.childImageSharp.fixed}
         alt={node.relativePath.split('.')[0]}
         meta={imageData[node.relativePath]}
         pathname={location.pathname}
@@ -69,7 +82,7 @@ const Gallery = ({data, location}) => {
   }
 
   const renderGallery = () => {
-    return thisGallery.map((picture, idx) => {
+    return thisGalleryFluid.map((picture, idx) => {
       return (
         <div key={picture.key} onClick={() => onModalClick(idx)}>
           {picture}
@@ -89,7 +102,12 @@ const Gallery = ({data, location}) => {
 
       {!on && <GalleryLayout style={fader}>{renderGallery()}</GalleryLayout>}
 
-      <Modal on={on} toggle={toggle} gallery={thisGallery} index={index} />
+      <Modal2
+        on={on}
+        toggle={toggle}
+        gallery={thisGalleryFixed}
+        index={index}
+      />
     </Layout>
   )
 }
@@ -111,11 +129,10 @@ export const artistQuery = graphql`
           relativePath
           childImageSharp {
             fluid(maxWidth: 350) {
-              aspectRatio
-              base64
-              sizes
-              src
-              srcSet
+              ...GatsbyImageSharpFluid
+            }
+            fixed {
+              ...GatsbyImageSharpFixed
             }
           }
           id
