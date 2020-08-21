@@ -1,3 +1,5 @@
 export * from './ImageWrapper'
-export * from './ContainerG12'
-export * from './ModalCard'
+export * from './Modal_style'
+export * from './GalleryLayout'
+export * from './Header_style'
+export * from './Nav_style'

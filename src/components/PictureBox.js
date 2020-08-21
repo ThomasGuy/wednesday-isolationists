@@ -12,16 +12,12 @@ const PictureStyles = styled.div`
   }
 `
 
-const PictureBox = ({fluid, alt, meta, pathname}) => {
+const PictureBox = ({ fluid, alt, meta, pathname }) => {
   return (
     <>
       <PictureStyles>
         <Img fluid={fluid} alt={alt} />
-        {pathname.includes('artists') ? (
-          <p>{meta.subject}</p>
-        ) : (
-          <p>{meta.artist}</p>
-        )}
+        {pathname.includes('artists') ? <p>{meta.subject}</p> : <p>{meta.artist}</p>}
       </PictureStyles>
     </>
   )

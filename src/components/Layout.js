@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
-import {useSpring} from 'react-spring'
+import React, { useState } from 'react'
+import { useSpring } from 'react-spring'
 // import styled from 'styled-components'
-import {Link, graphql, useStaticQuery} from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 import GlobalStyles from './globalStyles'
 import Nav from './Nav'
@@ -9,7 +9,7 @@ import useLists from '../hooks/useLists'
 import SEO from './seo'
 import Header from './Header'
 
-const ISOLATIONISTS = graphql`
+const META_ISOLATIONISTS = graphql`
   query {
     site {
       siteMetadata {
@@ -20,8 +20,8 @@ const ISOLATIONISTS = graphql`
   }
 `
 
-const Layout = ({children}) => {
-  const data = useStaticQuery(ISOLATIONISTS)
+const Layout = ({ children }) => {
+  const data = useStaticQuery(META_ISOLATIONISTS)
   const [artists, subjects] = useLists()
   const [isArtListOpen, setArtListOpen] = useState(false)
   const [isSubListOpen, setSubListOpen] = useState(false)
@@ -39,24 +39,17 @@ const Layout = ({children}) => {
   ))
 
   const showArtList = useSpring({
-    transform: isArtListOpen
-      ? `translate3d(0,0,0) scale(1)`
-      : `translate3d(-100%,0,0) scale(0.6)`,
+    transform: isArtListOpen ? `translate3d(0,0,0) scale(1)` : `translate3d(-100%,0,0) scale(0.6)`,
   })
 
   const showSubList = useSpring({
-    transform: isSubListOpen
-      ? `translate3d(0,0,0) scale(1)`
-      : `translate3d(-100%,0,0) scale(0.6)`,
+    transform: isSubListOpen ? `translate3d(0,0,0) scale(1)` : `translate3d(-100%,0,0) scale(0.6)`,
   })
 
   return (
     <>
       <GlobalStyles />
-      <SEO
-        title={data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
-      />
+      <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
       <Header setArt={setArtListOpen} setSub={setSubListOpen} />
 
       <div>
