@@ -9,7 +9,7 @@ const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
   const onClick = useCallback(() => setIdx(state => (state + 1) % gallery.length), [gallery.length])
 
   const pages = gallery.map(picture => ({ style }) => (
-    <animated.div style={{ ...style, background: 'blue' }}>{picture}</animated.div>
+    <animated.div style={{ ...style }}>{picture}</animated.div>
   ))
 
   const nextPicTansition = useTransition(idx, idx => idx, {
