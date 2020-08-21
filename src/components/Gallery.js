@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import PictureBox from './PictureBox'
 import ModalBox from './ModalBox'
 import Layout from './Layout'
-import Modal2 from './Modal2'
+import Modal from './Modal'
 import { GalleryLayout, Title } from './styles'
 
 const Gallery = ({ data, location }) => {
@@ -64,7 +64,7 @@ const Gallery = ({ data, location }) => {
 
       {!on && <GalleryLayout>{renderGallery()}</GalleryLayout>}
 
-      <Modal2 on={on} toggle={toggle} gallery={thisGalleryModal} index={index} />
+      <Modal on={on} toggle={toggle} gallery={thisGalleryModal} index={index} />
     </Layout>
   )
 }
