@@ -26,7 +26,7 @@ const useLists = () => {
     if (newSubject) subjects.add(newSubject)
   })
 
-  return [[...artists], [...subjects]]
+  return [[...artists], [...subjects].sort()]
 }
 
 export default useLists
