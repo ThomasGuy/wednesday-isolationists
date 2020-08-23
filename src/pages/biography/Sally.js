@@ -81,22 +81,22 @@ function Sally() {
             <p>Paintings and glasswork can be seen on the following websites.</p>
             <ul>
               <li>
-                <a href="www.sallyscottartist.co.uk">Sally Scott artist</a>
+                <a href="https://www.sallyscottartist.co.uk">Sally Scott artist</a>
               </li>
               <li>
-                <a href="www.chelseaartsociety.org.uk">Chelsea Arts Society</a>
+                <a href="https://www.chelseaartsociety.org.uk">Chelsea Arts Society</a>
               </li>
               <li>
-                <a href="www.richmondprintmakers.co.uk">Richmond Printmakers</a>
+                <a href="https://www.richmondprintmakers.co.uk">Richmond Printmakers</a>
               </li>
               <li>
-                <a href="www.grapevinegallery.co.uk">Grapevine Gallery</a>
+                <a href="https://www.grapevinegallery.co.uk">Grapevine Gallery</a>
               </li>
               <li>
-                <a href="www.artworkersguild.org">Guild of Artwworkers</a>
+                <a href="https://www.artworkersguild.org">Guild of Artwworkers</a>
               </li>
               <li>
-                <a href="www.gge.org.uk">The Guild of Glass Engravers</a>
+                <a href="https://www.gge.org.uk">The Guild of Glass Engravers</a>
               </li>
             </ul>
             - Facebook@sallyscottartist Contact email sallyscott.guy@gmail.com
