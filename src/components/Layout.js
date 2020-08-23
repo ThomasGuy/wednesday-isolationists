@@ -51,12 +51,12 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
 
-      <div className="site">
+      <div>
         <Header setArt={setArtListOpen} setSub={setSubListOpen} />
         <Nav style={showArtList} list={artList} />
         <Nav style={showSubList} list={subList} />
-        <main className="site-content">{children}</main>
-        <footer className="footer">TWGuy web development</footer>
+        <main>{children}</main>
+        <footer>TWGuy web development</footer>
       </div>
     </>
   )

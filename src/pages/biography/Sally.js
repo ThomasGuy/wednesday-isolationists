@@ -1,84 +1,110 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
-import Layout from '../../components/Layout'
-import SEO from '../../components/seo'
-
-const Title = styled.div`
-  color: #b88f83;
-  text-align: center;
-  margin: 2rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-
-  @media screen and (min-width: 628px) {
-    font-size: 2.4rem;
-  }
-  @media screen and (min-width: 788px) {
-    font-size: 3.2rem;
-  }
-`
-
-const FrontPage = styled.article`
-  margin: 1rem 2rem;
-  font-family: Titilium Roboto Helvetica, sans-serif;
-
-  h3 {
-    color: inherit;
-  }
-
-  span {
-    font-size: 1.3rem;
-    color: #b88f83;
-  }
-`
+import Layout from '../../components/Layout';
+import SEO from '../../components/seo';
+import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const SALLY_QUERY = graphql`
   query bioSally {
-    file(relativePath: { regex: "/lockdown/" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    allFile(filter: { relativeDirectory: { regex: "/biography/Sally/" } }) {
+      edges {
+        node {
+          relativePath
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }
   }
-`
+`;
 
-export default function Sally() {
-  const data = useStaticQuery(SALLY_QUERY)
+function Sally() {
+  const data = useStaticQuery(SALLY_QUERY);
+  const bioPics = data.allFile.edges.reduce((acc, { node }) => {
+    let path = node.relativePath.split('.')[0];
+    let idx = path.split('/').slice(-1).pop();
+    acc[idx] = {
+      fluid: node.childImageSharp.fluid,
+      alt: idx,
+    };
+    return acc;
+  }, {});
+
+  console.log(bioPics['lockdown']);
   return (
     <Layout>
-      <SEO />
-      <Title>Sally</Title>
+      <SEO
+        title="Sally Scott"
+        description="Sally Scott artist painter architectural glass etching lithography"
+      />
+      <Grid>
+        <Row>
+          <Image>
+            <Img fluid={bioPics['lockdown'].fluid} alt={bioPics['lockdown'].alt} />
+          </Image>
+        </Row>
 
-      <Img fluid={data.file.childImageSharp.fluid} />
+        <Row className="center">
+          <Image width={'200px'} size={1}>
+            <Img fluid={bioPics['mug'].fluid} alt={bioPics['mug'].alt} />
+          </Image>
+          <Col>
+            <Title>Sally Scott</Title>
+            <div>Cert. R.A.S. F.G.E. C.A.S.</div>
+          </Col>
+        </Row>
 
-      <FrontPage>
-        <p>
-          Incididunt incididunt esse nulla minim sit mollit commodo nulla esse commodo. Ad et elit
-          id ut. Ex reprehenderit ea ipsum adipisicing ad aute commodo adipisicing ad fugiat Lorem
-          id. Aute deserunt mollit incididunt veniam. Id nisi eu do velit veniam enim amet laboris
-          eu cupidatat sunt nisi tempor.
-        </p>
-
-        <p>
-          Qui sunt nulla ullamco sit adipisicing. Mollit non commodo deserunt sunt tempor ullamco
-          dolor aliqua sint fugiat exercitation exercitation eiusmod incididunt. Sit id labore
-          mollit ea labore commodo tempor dolor laborum. Labore incididunt esse velit irure irure
-          ipsum adipisicing nulla do. Eiusmod proident sit ad pariatur anim deserunt ut cillum.
-          Incididunt dolore est ut ipsum.
-        </p>
-
-        <p>
-          Culpa aliquip exercitation ad ut amet id. Eu occaecat sit deserunt proident laboris cillum
-          do esse commodo irure consectetur. Fugiat officia qui ad minim incididunt culpa velit. Et
-          dolore sunt eu non ad eu amet laborum duis non reprehenderit mollit. Nulla et in labore
-          exercitation amet dolore mollit officia exercitation.
-        </p>
-      </FrontPage>
+        <Row>
+          <Col>
+            <p>
+              Sally Scott studied painting at Croydon College of Art and the Royal Academy Schools.
+              She taught at Birmingham School of Art, Hornsey College of Art and Middlesex
+              Polytechnic, 1963-1991. She has been a working artist all her life, dividing her time
+              between painting and architectural glasswork. From 1986 to 2000 she worked in
+              partnership with David Peace, as Peace & Scott for collaboration on architectural
+              glass projects. Since then she continued the glass work alone, sometimes in
+              collaboration with other artists. For details of her architectural glass work see her
+              website. Her painting includes works in oil, watercolour and pastel. Sally lives in
+              London and France. Sally exhibits paintings and lithographs regularly in mixed shows:
+              In 2019 She had a Retrospective Exhibition – exhibiting a lifetime of work, Glass,
+              Painting and Print at The Menier Gallery, London.
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <p>Paintings and glasswork can be seen on the following websites.</p>
+            <ul>
+              <li>
+                <a href="www.sallyscottartist.co.uk">Sally Scott artist</a>
+              </li>
+              <li>
+                <a href="www.chelseaartsociety.org.uk">Chelsea Arts Society</a>
+              </li>
+              <li>
+                <a href="www.richmondprintmakers.co.uk">Richmond Printmakers</a>
+              </li>
+              <li>
+                <a href="www.grapevinegallery.co.uk">Grapevine Gallery</a>
+              </li>
+              <li>
+                <a href="www.artworkersguild.org">Guild of Artwworkers</a>
+              </li>
+              <li>
+                <a href="www.gge.org.uk">The Guild of Glass Engravers</a>
+              </li>
+            </ul>
+            - Facebook@sallyscottartist Contact email sallyscott.guy@gmail.com
+          </Col>
+        </Row>
+      </Grid>
     </Layout>
-  )
+  );
 }
+
+export default Sally;

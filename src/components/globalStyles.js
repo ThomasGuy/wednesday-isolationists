@@ -1,34 +1,45 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-  body {
-    margin: 0 auto;
-    color: white;
-    background-color: #282c34;
-    max-width: 1380px;
-    padding: 0.1rem 0.8rem;
+  * {
+    box-sizing: border-box;
   }
 
-  .site {
+  body {
+    color: white;
+    background-color: #282c34;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
 
-  .site-content {
-    flex-grow: 1;
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.4rem;
+  }
+
+  footer {
+    margin-top: auto;
+    font-size: 0.6rem;
+    color: #CCCDCE;
+    text-align: center;
   }
 
   .sticky {
     position: sticky;
     top: 0;
-    z-index: 100;
+    ${'' /* z-index: 100; */}
   }
 
   .sticky-wrapper {
     position: relative;
     height: 3rem; /* We need to change this value */
+
+    @media screen and (min-width: 768px) {
+      height: 4rem;
+    }
   }
 
   .sticky .sticky-inner {
@@ -37,14 +48,8 @@ const GlobalStyle = createGlobalStyle`
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 1;
   }
+`;
 
-  .footer {
-    font-size: 0.6rem;
-    color: #CCCDCE;
-    text-align: center;
-  }
-`
-
-export default GlobalStyle
+export default GlobalStyle;

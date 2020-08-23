@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { animated } from 'react-spring'
 
 export const GalleryLayout = styled(animated.div)`
+  margin: 0 auto;
   color: white;
   display: grid;
   grid-template-columns: 1fr;
@@ -19,6 +20,5 @@ export const GalleryLayout = styled(animated.div)`
 
   @media screen and (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 40px;
   }
 `
