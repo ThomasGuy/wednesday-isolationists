@@ -1,32 +1,53 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'gatsby'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Title = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: baseline;
   background: #282c34;
   width: 100%;
   padding-top: 1rem;
 
   & > div {
-    font-size: 2rem;
-    font-weight: 900;
-    padding: 0 2rem;
+    text-align: center;
+    font-size: 1.1rem;
+
+    @media screen and (min-width: 368px) {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    @media screen and (min-width: 568px) {
+      font-size: 1.7rem;
+    }
 
     @media screen and (min-width: 768px) {
-      font-size: 3rem;
+      font-size: 2.2rem;
+      font-weight: 900;
+    }
+
+    @media screen and (min-width: 968px) {
+      font-size: 2.8rem;
     }
   }
 
   & > a {
-    align-self: center;
+    align-self: bottom;
     padding-left: 2rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     text-decoration: none;
+
+    @media screen and (min-width: 368px) {
+      font-size: 0.8rem;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding-left: 4rem;
+    }
   }
-`
+`;
 
 const StickyTitle = ({ title, isArtist }) => {
   return (
@@ -35,7 +56,7 @@ const StickyTitle = ({ title, isArtist }) => {
 
       {isArtist && <Link to={`/biography/${title}`}>biography</Link>}
     </Title>
-  )
-}
+  );
+};
 
-export default StickyTitle
+export default StickyTitle;

@@ -3,20 +3,31 @@ import styled from 'styled-components';
 export const PageTitle = styled.div`
   color: #b88f83;
   text-align: center;
-  margin: 2rem;
-  font-size: 1.5rem;
+  margin: 2rem 0;
+  font-size: 1rem;
   font-weight: bold;
 
-  @media screen and (min-width: 628px) {
-    font-size: 2.4rem;
+  @media screen and (min-width: 368px) {
+    font-size: 1.3rem;
+    font-weight: 600;
   }
-  @media screen and (min-width: 788px) {
-    font-size: 3.2rem;
+
+  @media screen and (min-width: 568px) {
+    font-size: 1.7rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 2.2rem;
+    font-weight: 900;
+  }
+
+  @media screen and (min-width: 968px) {
+    font-size: 2.8rem;
   }
 `;
 
 export const FrontPage = styled.article`
-  margin: 1rem 2rem;
+  margin: 1rem 0;
 
   ol {
     list-style-type: none;
@@ -45,6 +56,5 @@ export const FrontPage = styled.article`
   span {
     font-size: 1.3rem;
     color: #b88f83;
-    padding-left: 1rem;
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSpring } from 'react-spring';
-// import styled from 'styled-components'
+import { FaEnvelope } from 'react-icons/fa';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import GlobalStyles from './globalStyles';
@@ -57,7 +57,9 @@ const Layout = ({ children }) => {
         <Nav style={showSubList} list={subList} />
         <main>{children}</main>
         <footer>
-          <a href="mailto:twguy.webdev@gmail.com">TWGuy web development</a>
+          <a href="mailto:twguy.webdev@gmail.com">
+            TWGuy web development <FaEnvelope />
+          </a>
         </footer>
       </div>
     </>
