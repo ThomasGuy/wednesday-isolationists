@@ -51,7 +51,9 @@ export default function Home() {
           <li>
             <Link to="/biography/Sally">Sally Scott</Link>
           </li>
-          <li>Gilbert Whyman</li>
+          <li>
+            <Link to="/biography/Gil">Gilbert Whyman</Link>
+          </li>
           <li>Judy Ney</li>
           <li>Suzanne Ewart</li>
         </ol>

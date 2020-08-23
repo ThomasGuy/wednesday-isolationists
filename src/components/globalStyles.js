@@ -23,8 +23,12 @@ const GlobalStyle = createGlobalStyle`
   footer {
     margin-top: auto;
     font-size: 0.6rem;
-    color: #CCCDCE;
     text-align: center;
+
+    & > a {
+      color: #CCCDCE;
+      text-decoration: none;
+    }
   }
 
   .sticky {

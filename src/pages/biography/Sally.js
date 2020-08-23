@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { FaEnvelope, FaFacebook } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
@@ -74,11 +75,17 @@ function Sally() {
               In 2019 She had a Retrospective Exhibition – exhibiting a lifetime of work, Glass,
               Painting and Print at The Menier Gallery, London.
             </p>
+            <p>
+              Email:{' '}
+              <a href="mailto:sallyscott.guy@gmail.com">
+                <FaEnvelope />
+              </a>
+            </p>
           </Col>
         </Row>
         <Row>
           <Col>
-            <p>Paintings and glasswork can be seen on the following websites.</p>
+            <p>Paintings, glasswork and prints can be seen on the following websites.</p>
             <ul>
               <li>
                 <a href="https://www.sallyscottartist.co.uk">Sally Scott artist</a>
@@ -93,13 +100,12 @@ function Sally() {
                 <a href="https://www.grapevinegallery.co.uk">Grapevine Gallery</a>
               </li>
               <li>
-                <a href="https://www.artworkersguild.org">Guild of Artwworkers</a>
+                <a href="https://www.artworkersguild.org">The Art workers Guild</a>
               </li>
               <li>
                 <a href="https://www.gge.org.uk">The Guild of Glass Engravers</a>
               </li>
             </ul>
-            - Facebook@sallyscottartist Contact email sallyscott.guy@gmail.com
           </Col>
         </Row>
       </Grid>
