@@ -38,12 +38,14 @@ export default function Home() {
         <p>
           They decided the way to continue was for one member to choose a subject each week and they
           all should post their results on Wednesdays.  They had no collective name before Lockdown,
-          but with this new way of working from home they became the{' '}
-          <span>Wednesday Isolationists</span>
+          but with this new way of working from home they became the...
+          <p>
+            <span>Wednesday Isolationists</span>
+          </p>
         </p>
         <br />
         <h3>List of Isolationists</h3>
-        <ol>
+        <ul>
           <li>Janet Mays</li>
           <li>Margot Graville</li>
           <li>Margaret Knott</li>
@@ -56,7 +58,7 @@ export default function Home() {
           </li>
           <li>Judy Ney</li>
           <li>Suzanne Ewart</li>
-        </ol>
+        </ul>
       </FrontPage>
     </Layout>
   );

@@ -4,13 +4,8 @@ export const PageTitle = styled.div`
   color: #b88f83;
   text-align: center;
   margin: 2rem 0;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: bold;
-
-  @media screen and (min-width: 368px) {
-    font-size: 1.3rem;
-    font-weight: 600;
-  }
 
   @media screen and (min-width: 568px) {
     font-size: 1.7rem;
