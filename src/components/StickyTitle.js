@@ -12,24 +12,24 @@ const Title = styled.div`
 
   & > div {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: ${({ isArtist }) => (isArtist ? '1.3rem' : '1.1rem')};
 
     @media screen and (min-width: 368px) {
-      font-size: 1.3rem;
+      font-size: ${({ isArtist }) => (isArtist ? '1.6rem' : '1.3rem')};
       font-weight: 600;
     }
 
     @media screen and (min-width: 568px) {
-      font-size: 1.7rem;
+      font-size: ${({ isArtist }) => (isArtist ? '2rem' : '1.7rem')};
     }
 
     @media screen and (min-width: 768px) {
-      font-size: 2.2rem;
+      font-size: ${({ isArtist }) => (isArtist ? '2.5rem' : '2.2rem')};
       font-weight: 900;
     }
 
     @media screen and (min-width: 968px) {
-      font-size: 2.8rem;
+      font-size: ${({ isArtist }) => (isArtist ? '3rem' : '2.8rem')};
     }
   }
 
@@ -38,6 +38,7 @@ const Title = styled.div`
     padding-left: 2rem;
     font-size: 0.7rem;
     text-decoration: none;
+    color: lightgrey;
 
     @media screen and (min-width: 368px) {
       font-size: 0.8rem;
@@ -51,7 +52,7 @@ const Title = styled.div`
 
 const StickyTitle = ({ title, isArtist }) => {
   return (
-    <Title className="sticky-inner">
+    <Title className="sticky-inner" isArtist={isArtist}>
       <div>{title}</div>
 
       {isArtist && <Link to={`/biography/${title}`}>biography</Link>}

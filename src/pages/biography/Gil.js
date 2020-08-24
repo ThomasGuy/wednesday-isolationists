@@ -24,7 +24,7 @@ const GIL_QUERY = graphql`
   }
 `;
 
-function Sally() {
+function Biography() {
   const data = useStaticQuery(GIL_QUERY);
   const bioPics = data.allFile.edges.reduce((acc, { node }) => {
     let path = node.relativePath.split('.')[0];
@@ -36,7 +36,6 @@ function Sally() {
     return acc;
   }, {});
 
-  console.log(bioPics['lockdown']);
   return (
     <Layout>
       <SEO
@@ -55,8 +54,16 @@ function Sally() {
             <Img fluid={bioPics['mug_steel'].fluid} alt={bioPics['mug_steel'].alt} />
           </Image>
           <Col>
-            <Title>Gilbert Whyman</Title>
-            <div>Cert. M.R.S.S.</div>
+            <Title>
+              <div>Gilbert Whyman</div>
+              <div id="cert">Cert. M.R.S.S.</div>
+            </Title>
+            <div className="bottom">
+              <a href="mailto:gilbertwhyman@hotmail.co.uk">
+                Email&nbsp;&nbsp;&nbsp;
+                <FaEnvelope />
+              </a>
+            </div>
           </Col>
         </Row>
 
@@ -88,12 +95,6 @@ function Sally() {
             </p>
 
             <p>Gilbert's work in private collections in UK, New York, and Australia</p>
-            <p>
-              Email:{' '}
-              <a href="mailto:gilbertwhyman@hotmail.co.uk">
-                <FaEnvelope />
-              </a>
-            </p>
           </Col>
         </Row>
         <Row>
@@ -120,4 +121,4 @@ function Sally() {
   );
 }
 
-export default Sally;
+export default Biography;

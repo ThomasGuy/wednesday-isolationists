@@ -24,7 +24,7 @@ export const PageTitle = styled.div`
 export const FrontPage = styled.article`
   margin: 1rem 0;
 
-  ol {
+  ul {
     list-style-type: none;
 
     a {

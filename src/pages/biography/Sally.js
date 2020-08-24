@@ -24,7 +24,7 @@ const SALLY_QUERY = graphql`
   }
 `;
 
-function Sally() {
+function Biography() {
   const data = useStaticQuery(SALLY_QUERY);
   const bioPics = data.allFile.edges.reduce((acc, { node }) => {
     let path = node.relativePath.split('.')[0];
@@ -36,7 +36,6 @@ function Sally() {
     return acc;
   }, {});
 
-  console.log(bioPics['lockdown']);
   return (
     <Layout>
       <SEO
@@ -52,11 +51,29 @@ function Sally() {
 
         <Row className="center">
           <Image width={'200px'} size={1}>
-            <Img fluid={bioPics['mug'].fluid} alt={bioPics['mug'].alt} />
+            <Img title="Sally Scott artist" fluid={bioPics['mug'].fluid} alt="Sally Scott artist" />
           </Image>
           <Col>
-            <Title>Sally Scott</Title>
-            <div>Cert. R.A.S. F.G.E. C.A.S.</div>
+            <Title>
+              <div>Sally Scott</div>
+              <div id="cert">Cert. R.A.S. F.G.E. C.A.S.</div>
+            </Title>
+            <div className="bottom">
+              <a title="follow me on facebook" href="https://www.facebook.com/sallyscottartist">
+                <img
+                  style={{ marginBottom: '0' }}
+                  alt="follow me on facebook"
+                  src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png"
+                  border={0}
+                />
+              </a>
+            </div>
+            <div>
+              <a title="email me" href="mailto:sallyscott.guy@gmail.com">
+                {/* Email&nbsp;&nbsp;&nbsp; */}
+                <FaEnvelope />
+              </a>
+            </div>
           </Col>
         </Row>
 
@@ -65,21 +82,26 @@ function Sally() {
             <p>
               Sally Scott studied painting at Croydon College of Art and the Royal Academy Schools.
               She taught at Birmingham School of Art, Hornsey College of Art and Middlesex
-              Polytechnic, 1963-1991. She has been a working artist all her life, dividing her time
-              between painting and architectural glasswork. From 1986 to 2000 she worked in
-              partnership with David Peace, as Peace & Scott for collaboration on architectural
-              glass projects. Since then she continued the glass work alone, sometimes in
-              collaboration with other artists. For details of her architectural glass work see her
-              website. Her painting includes works in oil, watercolour and pastel. Sally lives in
-              London and France. Sally exhibits paintings and lithographs regularly in mixed shows:
-              In 2019 She had a Retrospective Exhibition – exhibiting a lifetime of work, Glass,
-              Painting and Print at The Menier Gallery, London.
+              Polytechnic, 1963-1991.
             </p>
             <p>
-              Email:{' '}
-              <a href="mailto:sallyscott.guy@gmail.com">
-                <FaEnvelope />
-              </a>
+              She has been a working artist all her life, dividing her time between painting and
+              architectural glasswork.
+            </p>
+            <p>
+              From 1986 to 2000 she worked in partnership with David Peace, as Peace & Scott for
+              collaboration on architectural glass projects. Since then she continued the glass work
+              alone, sometimes in collaboration with other artists. For details of her architectural
+              glass work see her website.
+            </p>
+            <p> Her painting includes works in oil, watercolour and pastel.</p>
+            <p>
+              Sally lives in London, where she exhibits paintings and lithographs regularly in mixed
+              shows
+            </p>
+            <p>
+              In 2019 She had a Retrospective Exhibition – exhibiting a lifetime of work, Glass,
+              Painting and Print at The Menier Gallery, London.
             </p>
           </Col>
         </Row>
@@ -113,4 +135,4 @@ function Sally() {
   );
 }
 
-export default Sally;
+export default Biography;

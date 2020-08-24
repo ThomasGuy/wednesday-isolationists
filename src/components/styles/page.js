@@ -6,8 +6,23 @@ export const Grid = styled.div`
 `;
 
 export const Title = styled.div`
-  font-size: 1.7rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: bold;
+  #cert {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: 368px) {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  @media screen and (min-width: 568px) {
+    font-size: 1.9rem;
+    #cert {
+      font-size: 1rem;
+    }
+  }
 
   @media screen and (min-width: 768px) {
     font-size: 2.5rem;
@@ -29,20 +44,24 @@ export const Row = styled.div`
 `;
 
 export const Col = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  .bottom {
+    margin-top: auto;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   ul {
     list-style-type: none;
-
-    a {
-      text-decoration: none;
-      color: white;
-    }
-
     li {
       padding: 8px;
       margin-bottom: 7px;
       color: #ffffff;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-
       &:hover {
         background-color: #242424;
       }
