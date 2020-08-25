@@ -49,14 +49,15 @@ function Biography() {
           </Image>
         </Row>
 
-        <Row className='center'>
+        <Row>
           <Image width={'200px'} size={1}>
             <Img fluid={bioPics['mug_steel'].fluid} alt='Gil self portrait' />
           </Image>
           <Col>
             <Title>
-              <div>Gilbert Whyman</div>
-              <div id='cert'>Cert. M.R.S.S.</div>
+              <div>
+                Gilbert Whyman&nbsp;&nbsp;<span id='cert'>MRSS</span>
+              </div>
             </Title>
             <div className='bottom'>
               <a href='mailto:gilbertwhyman@hotmail.co.uk'>

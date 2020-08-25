@@ -38,10 +38,7 @@ function Biography() {
 
   return (
     <Layout>
-      <SEO
-        title='Gilbert Whyman'
-        description='Gilbert Whyman artist sculpter metal painter architect life drawing'
-      />
+      <SEO title='Margot Graville' description='Margot Graville artist painter printmaker' />
       <Grid>
         <Row>
           <Image>
@@ -49,7 +46,7 @@ function Biography() {
           </Image>
         </Row>
 
-        <Row className='center'>
+        <Row>
           <Image width={'200px'} size={1}>
             <Img fluid={bioPics['mug'].fluid} alt='Margot_portrait' />
           </Image>

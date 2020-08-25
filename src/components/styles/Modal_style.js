@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import {animated} from 'react-spring'
+import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 export const ModalCard = styled(animated.div)`
   padding: 20px;
@@ -10,6 +10,16 @@ export const ModalCard = styled(animated.div)`
   background: black;
   border-radius: 20px;
 
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+
+  &::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+  }
+
   button {
     position: fixed;
     top: 13px;
@@ -17,7 +27,7 @@ export const ModalCard = styled(animated.div)`
     z-index: 20;
     opacity: 0.5;
   }
-`
+`;
 
 export const ModalBase = styled.div`
   position: fixed;
@@ -28,4 +38,4 @@ export const ModalBase = styled.div`
   display: flex;
   justify-content: center;
   background: #282c34;
-`
+`;

@@ -2,12 +2,13 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { FaEnvelope } from 'react-icons/fa';
+// import BackgroundSlider from 'gatsby-image-background-slider';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
-const SALLY_QUERY = graphql`
+const Sally_QUERY = graphql`
   query bioSally {
     allFile(filter: { relativeDirectory: { regex: "/biography/Sally/" } }) {
       edges {
@@ -25,7 +26,7 @@ const SALLY_QUERY = graphql`
 `;
 
 function Biography() {
-  const data = useStaticQuery(SALLY_QUERY);
+  const data = useStaticQuery(Sally_QUERY);
   const bioPics = data.allFile.edges.reduce((acc, { node }) => {
     let path = node.relativePath.split('.')[0];
     let idx = path.split('/').slice(-1).pop();
@@ -35,6 +36,8 @@ function Biography() {
     };
     return acc;
   }, {});
+
+  console.log(bioPics);
 
   return (
     <Layout>
@@ -49,14 +52,14 @@ function Biography() {
           </Image>
         </Row>
 
-        <Row className='center'>
-          <Image width={'200px'} size={1}>
+        <Row>
+          <Image width={'200px'}>
             <Img title='Sally Scott artist' fluid={bioPics['mug'].fluid} alt='Sally Scott artist' />
           </Image>
           <Col>
             <Title>
               <div>Sally Scott</div>
-              <div id='cert'>Cert. R.A.S. F.G.E. C.A.S.</div>
+              <div id='cert'>Cert. RAS FGE CAS</div>
             </Title>
             <div className='bottom'>
               <a title='email me' href='mailto:sallyscott.guy@gmail.com'>
@@ -80,14 +83,12 @@ function Biography() {
             </p>
             <p>
               From 1986 to 2000 she worked in partnership with David Peace, as Peace & Scott for
-              collaboration on architectural glass projects. Since then she continued the glass work
-              alone, sometimes in collaboration with other artists. For details of her architectural
-              glass work see her website.
+              collaboration on architectural glass projects. For details of her architectural glass
+              work see her website.
             </p>
             <p> Her painting includes works in oil, watercolour and pastel.</p>
             <p>
-              Sally lives in London, where she exhibits paintings and lithographs regularly in mixed
-              shows
+              Sally lives in London, she exhibits paintings and lithographs regularly in mixed shows
             </p>
             <p>
               In 2019 She had a Retrospective Exhibition – exhibiting a lifetime of work, Glass,

@@ -50,7 +50,9 @@ export default function Home() {
             <Link to='/biography/Margot'>Margot Graville</Link>
           </li>
           <li>Margaret Knott</li>
-          <li>Charles Penny</li>
+          <li>
+            <Link to='/biography/Charles'>Charles Penny</Link>
+          </li>
           <li>
             <Link to='/biography/Sally'>Sally Scott</Link>
           </li>
@@ -58,7 +60,9 @@ export default function Home() {
             <Link to='/biography/Gil'>Gilbert Whyman</Link>
           </li>
           <li>Judy Ney</li>
-          <li>Suzanne Ewart</li>
+          <li>
+            <Link to='/biography/Suzanne'>Suzanne Ewart</Link>
+          </li>
         </ul>
       </FrontPage>
     </Layout>
