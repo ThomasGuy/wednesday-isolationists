@@ -23,7 +23,7 @@ const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
 
   return (
     <ModalBase style={{ pointerEvents }}>
-      <ModalCard style={animation}>
+      <ModalCard style={animation} onClick={onClick}>
         <div onClick={onClick}>
           {nextPicTansition.map(({ item, props: animationPage, key }) => {
             const Page = pages[item];
