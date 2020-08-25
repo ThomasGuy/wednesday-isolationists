@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { FaEnvelope, FaFacebook } from 'react-icons/fa';
+import { FaEnvelope } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
@@ -39,8 +39,8 @@ function Biography() {
   return (
     <Layout>
       <SEO
-        title="Sally Scott"
-        description="Sally Scott artist painter architectural glass etching lithography"
+        title='Sally Scott'
+        description='Sally Scott artist painter architectural glass etching lithography'
       />
       <Grid>
         <Row>
@@ -49,28 +49,18 @@ function Biography() {
           </Image>
         </Row>
 
-        <Row className="center">
+        <Row className='center'>
           <Image width={'200px'} size={1}>
-            <Img title="Sally Scott artist" fluid={bioPics['mug'].fluid} alt="Sally Scott artist" />
+            <Img title='Sally Scott artist' fluid={bioPics['mug'].fluid} alt='Sally Scott artist' />
           </Image>
           <Col>
             <Title>
               <div>Sally Scott</div>
-              <div id="cert">Cert. R.A.S. F.G.E. C.A.S.</div>
+              <div id='cert'>Cert. R.A.S. F.G.E. C.A.S.</div>
             </Title>
-            <div className="bottom">
-              <a title="follow me on facebook" href="https://www.facebook.com/sallyscottartist">
-                <img
-                  style={{ marginBottom: '0' }}
-                  alt="follow me on facebook"
-                  src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png"
-                  border={0}
-                />
-              </a>
-            </div>
-            <div>
-              <a title="email me" href="mailto:sallyscott.guy@gmail.com">
-                {/* Email&nbsp;&nbsp;&nbsp; */}
+            <div className='bottom'>
+              <a title='email me' href='mailto:sallyscott.guy@gmail.com'>
+                Email&nbsp;&nbsp;&nbsp;
                 <FaEnvelope />
               </a>
             </div>
@@ -110,22 +100,32 @@ function Biography() {
             <p>Paintings, glasswork and prints can be seen on the following websites.</p>
             <ul>
               <li>
-                <a href="https://www.sallyscottartist.co.uk">Sally Scott artist</a>
+                <a href='https://www.sallyscottartist.co.uk'>Sally Scott artist</a>
               </li>
               <li>
-                <a href="https://www.chelseaartsociety.org.uk">Chelsea Arts Society</a>
+                <a href='https://www.chelseaartsociety.org.uk'>Chelsea Arts Society</a>
               </li>
               <li>
-                <a href="https://www.richmondprintmakers.co.uk">Richmond Printmakers</a>
+                <a href='https://www.richmondprintmakers.co.uk'>Richmond Printmakers</a>
               </li>
               <li>
-                <a href="https://www.grapevinegallery.co.uk">Grapevine Gallery</a>
+                <a href='https://www.grapevinegallery.co.uk'>Grapevine Gallery</a>
               </li>
               <li>
-                <a href="https://www.artworkersguild.org">The Art workers Guild</a>
+                <a href='https://www.artworkersguild.org'>The Art workers Guild</a>
               </li>
               <li>
-                <a href="https://www.gge.org.uk">The Guild of Glass Engravers</a>
+                <a href='https://www.gge.org.uk'>The Guild of Glass Engravers</a>
+              </li>
+              <li>
+                <a title='follow me on facebook' href='https://www.facebook.com/sallyscottartist'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on facebook'
+                    src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
+                    border={0}
+                  />
+                </a>
               </li>
             </ul>
           </Col>

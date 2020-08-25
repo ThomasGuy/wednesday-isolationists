@@ -39,8 +39,8 @@ function Biography() {
   return (
     <Layout>
       <SEO
-        title="Gilbert Whyman"
-        description="Gilbert Whyman artist sculpter metal painter architect life drawing"
+        title='Gilbert Whyman'
+        description='Gilbert Whyman artist sculpter metal painter architect life drawing'
       />
       <Grid>
         <Row>
@@ -49,17 +49,17 @@ function Biography() {
           </Image>
         </Row>
 
-        <Row className="center">
+        <Row className='center'>
           <Image width={'200px'} size={1}>
-            <Img fluid={bioPics['mug_steel'].fluid} alt={bioPics['mug_steel'].alt} />
+            <Img fluid={bioPics['mug_steel'].fluid} alt='Gil self portrait' />
           </Image>
           <Col>
             <Title>
               <div>Gilbert Whyman</div>
-              <div id="cert">Cert. M.R.S.S.</div>
+              <div id='cert'>Cert. M.R.S.S.</div>
             </Title>
-            <div className="bottom">
-              <a href="mailto:gilbertwhyman@hotmail.co.uk">
+            <div className='bottom'>
+              <a href='mailto:gilbertwhyman@hotmail.co.uk'>
                 Email&nbsp;&nbsp;&nbsp;
                 <FaEnvelope />
               </a>
@@ -102,16 +102,16 @@ function Biography() {
             <p>Sculptures can be seen on the following websites.</p>
             <ul>
               <li>
-                <a href="http://www.gilbertwhyman.co.uk">Gilbert Whyman Sculptor</a>
+                <a href='http://www.gilbertwhyman.co.uk'>Gilbert Whyman Sculptor</a>
               </li>
               <li>
-                <a href="http://www.rbs.org.uk">Royal British Society of Sculptors</a>
+                <a href='http://www.rbs.org.uk'>Royal British Society of Sculptors</a>
               </li>
               <li>
-                <a href="https://www.surreysculpture.org.uk/">Surrey Sculpture</a>
+                <a href='https://www.surreysculpture.org.uk/'>Surrey Sculpture</a>
               </li>
               <li>
-                <a href="https://www.artworkersguild.org">The Art workers Guild</a>
+                <a href='https://www.artworkersguild.org'>The Art workers Guild</a>
               </li>
             </ul>
           </Col>

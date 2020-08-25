@@ -22,7 +22,7 @@ export default function Home() {
   const data = useStaticQuery(STUDIO_QUERY);
   return (
     <Layout>
-      <SEO title="Wednesday Isolationists" />
+      <SEO title='Wednesday Isolationists' />
       <PageTitle>Wednesday Isolationists</PageTitle>
 
       <Img fluid={data.file.childImageSharp.fluid} />
@@ -46,14 +46,16 @@ export default function Home() {
         <h3>List of Isolationists</h3>
         <ul>
           <li>Janet Mays</li>
-          <li>Margot Graville</li>
+          <li>
+            <Link to='/biography/Margot'>Margot Graville</Link>
+          </li>
           <li>Margaret Knott</li>
           <li>Charles Penny</li>
           <li>
-            <Link to="/biography/Sally">Sally Scott</Link>
+            <Link to='/biography/Sally'>Sally Scott</Link>
           </li>
           <li>
-            <Link to="/biography/Gil">Gilbert Whyman</Link>
+            <Link to='/biography/Gil'>Gilbert Whyman</Link>
           </li>
           <li>Judy Ney</li>
           <li>Suzanne Ewart</li>
