@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import { Head } from './styles'
+import React from 'react';
+import { Link } from 'gatsby';
+import { Head } from './styles';
 
 const Header = ({ setArt, setSub }) => {
   return (
@@ -8,14 +8,14 @@ const Header = ({ setArt, setSub }) => {
       <button className="items">
         <Link to="/">Home</Link>
       </button>
-      <button className="items" onClick={() => setArt(true)}>
+      <button className="items" title="list of Isolationists" onClick={() => setArt(true)}>
         Artists
       </button>
       <button className="items" onClick={() => setSub(true)}>
         Subjects
       </button>
     </Head>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
