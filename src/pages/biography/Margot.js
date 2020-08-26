@@ -76,7 +76,7 @@ function Biography() {
               Initially Margot worked in the fashion industry as a designer/ pattern cutter, later
               becoming a freelance designer/fashion illustrator working for, among others, Conde
               Nast and Mothercare. She taught part time at Ealing School of Art, later becoming full
-              time at Luton College of Fashion. On retirement Margot returned to painting and
+              time at London College of Fashion. On retirement Margot returned to painting and
               drawing. Also enjoys printmaking and is a member of Richmond Printmakers.
             </p>
           </Col>

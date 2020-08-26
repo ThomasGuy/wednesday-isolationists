@@ -1,39 +1,39 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { graphql } from 'gatsby'
+import React, { useState, useRef, useEffect } from 'react';
+import { graphql } from 'gatsby';
 // import { useSpring } from 'react-spring'
 
-import PictureBox from './PictureBox'
-import ModalBox from './ModalBox'
-import Layout from './Layout'
-import Modal from './Modal'
-import { GalleryLayout } from './styles'
-import StickyTitle from './StickyTitle'
+import PictureBox from './PictureBox';
+import ModalBox from './ModalBox';
+import Layout from './Layout';
+import Modal from './Modal';
+import { GalleryLayout } from './styles';
+import StickyTitle from './StickyTitle';
 
 const Gallery = ({ data, location }) => {
-  const [on, toggle] = useState(false)
-  const [index, setIndex] = useState(0)
-  const [isArtistPage] = useState(location.pathname.includes('artists'))
-  const [isSticky, setSticky] = useState(false)
-  const ref = useRef(null)
+  const [on, toggle] = useState(false);
+  const [index, setIndex] = useState(0);
+  const [isArtistPage] = useState(location.pathname.includes('artists'));
+  const [isSticky, setSticky] = useState(false);
+  const ref = useRef(null);
 
   const handleScroll = () => {
     if (ref.current) {
-      setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0)
+      setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0);
     }
-  }
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', () => handleScroll)
-    }
+      window.removeEventListener('scroll', () => handleScroll);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
-    acc[bun.node.frontmatter.slug] = bun.node.frontmatter
-    return acc
-  }, {})
+    acc[bun.node.frontmatter.slug] = bun.node.frontmatter;
+    return acc;
+  }, {});
 
   const thisGalleryFluid = data.allFile.edges.map(({ node }) => {
     return (
@@ -44,8 +44,8 @@ const Gallery = ({ data, location }) => {
         meta={imageData[node.relativePath]}
         pathname={location.pathname}
       />
-    )
-  })
+    );
+  });
 
   const thisGalleryModal = data.allFile.edges.map(({ node }) => {
     return (
@@ -54,13 +54,13 @@ const Gallery = ({ data, location }) => {
         fluid={node.childImageSharp.fluid}
         alt={node.relativePath.split('.')[0]}
       />
-    )
-  })
+    );
+  });
 
   const onModalClick = idx => {
-    setIndex(idx)
-    toggle(true)
-  }
+    setIndex(idx);
+    toggle(true);
+  };
 
   const renderGallery = () => {
     return thisGalleryFluid.map((picture, idx) => {
@@ -68,14 +68,14 @@ const Gallery = ({ data, location }) => {
         <div key={picture.key} onClick={() => onModalClick(idx)}>
           {picture}
         </div>
-      )
-    })
-  }
+      );
+    });
+  };
 
   const title = () => {
-    const value = Object.values(imageData)[0]
-    return isArtistPage ? value.artist : value.subject
-  }
+    const value = Object.values(imageData)[0];
+    return isArtistPage ? value.artist : value.subject;
+  };
 
   return (
     <Layout>
@@ -83,18 +83,18 @@ const Gallery = ({ data, location }) => {
         <StickyTitle title={title()} isArtist={isArtistPage} />
       </div>
 
-      {!on && <GalleryLayout>{renderGallery()}</GalleryLayout>}
+      <GalleryLayout>{renderGallery()}</GalleryLayout>
 
       <Modal on={on} toggle={toggle} gallery={thisGalleryModal} index={index} />
     </Layout>
-  )
-}
+  );
+};
 
 Gallery.defaultProps = {
   location: {},
-}
+};
 
-export default Gallery
+export default Gallery;
 export const artistQuery = graphql`
   query galleryQuery($slugs: [String!]!) {
     allFile(
@@ -129,4 +129,4 @@ export const artistQuery = graphql`
       }
     }
   }
-`
+`;

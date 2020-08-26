@@ -72,7 +72,7 @@ function Biography() {
               After studying Art and Graphic Design at Ealing Art College Suzanne worked as a
               graphic designer in both London and Bermuda. She then developed a freelance career
               as an illustrator working for major advertising agencies, design studios and
-              publishers..
+              publishers...
             </p>
             <p>
               Suzanne taught Illustration, painting and drawing at RACC Richmond, North Kingston
@@ -88,7 +88,7 @@ function Biography() {
             <p>She paints in oil, acrylic and watercolour</p>
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col>
             <p>Suzanne's work can be seen on the following websites:-</p>
             <ul>
@@ -97,7 +97,7 @@ function Biography() {
               </li>
             </ul>
           </Col>
-        </Row>
+        </Row> */}
       </Grid>
     </Layout>
   );
