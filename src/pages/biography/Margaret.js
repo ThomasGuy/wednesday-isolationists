@@ -92,10 +92,6 @@ function Biography() {
               the RA Summer Exhibition, Originals 04 and the  Discerning Eye at the Mall Galleries.
             </p>
             <p>
-              She shows with Will’s Art Warehouse. Working as a printmaker as well as a painter, her
-              work has been published in  'Printmaking Today' and 'Artist Magazine’.
-            </p>
-            <p>
               Her etchings cover the walls of the restaurant ‘Artisans of Sardinia’ in Lacy Road,
               Putney, London SW15, where there is a Margaret Knott room, with etchings and paintings
               of Putney and Putney Bridge.
@@ -116,7 +112,7 @@ function Biography() {
             <p>Paintings & prints can be seen on the following website</p>
             <ul>
               <li>
-                <a href='https://www.wills-art.com'>Will's art wharehouse</a>
+                <a href='https://www.wills-art.com'>Will's art warehouse</a>
               </li>
             </ul>
           </Col>
