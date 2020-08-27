@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .sticky {
-    position: sticky;
+    position: stuckUpSticky;
     top: 0;
     ${'' /* z-index: 100; */}
   }

@@ -40,7 +40,7 @@ function Biography() {
     <Layout>
       <SEO
         title='Gilbert Whyman'
-        description='Gilbert Whyman artist sculpter metal painter architect life drawing'
+        description='artist sculpter metal welder painter architect life drawing'
       />
       <Grid>
         <Row>
@@ -51,7 +51,7 @@ function Biography() {
 
         <Row>
           <Image width={'200px'} size={1}>
-            <Img fluid={bioPics['mug_steel'].fluid} alt='Gil self portrait' />
+            <Img fluid={bioPics['mug_steel'].fluid} alt='Gil self portrait sculpture' />
           </Image>
           <Col>
             <Title>

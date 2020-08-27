@@ -16,25 +16,27 @@ const Gallery = ({ data, location }) => {
   const [isSticky, setSticky] = useState(false);
   const ref = useRef(null);
 
-  const handleScroll = () => {
-    if (ref.current) {
-      setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0);
-    }
-  };
-
+  // stick the Artist Name to the top of the page
   useEffect(() => {
+    const handleScroll = () => {
+      if (ref.current) {
+        setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isArtistPage]);
 
+  // Object for image metadata.. N.B. var 'bun' as in current bun
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
     acc[bun.node.frontmatter.slug] = bun.node.frontmatter;
     return acc;
   }, {});
 
+  // imaage files with metadata for this Gallery
   const thisGalleryFluid = data.allFile.edges.map(({ node }) => {
     return (
       <PictureBox
@@ -47,6 +49,7 @@ const Gallery = ({ data, location }) => {
     );
   });
 
+  // imaage files with metadata for this Gallery modal
   const thisGalleryModal = data.allFile.edges.map(({ node }) => {
     return (
       <ModalBox
@@ -57,11 +60,13 @@ const Gallery = ({ data, location }) => {
     );
   });
 
+  // modal event handler
   const onModalClick = idx => {
     setIndex(idx);
     toggle(true);
   };
 
+  // render gallery
   const renderGallery = () => {
     return thisGalleryFluid.map((picture, idx) => {
       return (
@@ -72,6 +77,7 @@ const Gallery = ({ data, location }) => {
     });
   };
 
+  // render title
   const title = () => {
     const value = Object.values(imageData)[0];
     return isArtistPage ? value.artist : value.subject;
@@ -83,18 +89,20 @@ const Gallery = ({ data, location }) => {
         <StickyTitle title={title()} isArtist={isArtistPage} />
       </div>
 
-      <GalleryLayout>{renderGallery()}</GalleryLayout>
+      {!on && <GalleryLayout>{renderGallery()}</GalleryLayout>}
 
       <Modal on={on} toggle={toggle} gallery={thisGalleryModal} index={index} />
     </Layout>
   );
 };
 
+// props
 Gallery.defaultProps = {
   location: {},
 };
 
 export default Gallery;
+// Note 'slugs' here is an array of 'relativePath'
 export const artistQuery = graphql`
   query galleryQuery($slugs: [String!]!) {
     allFile(
@@ -103,7 +111,6 @@ export const artistQuery = graphql`
     ) {
       edges {
         node {
-          base
           relativePath
           childImageSharp {
             fluid(maxWidth: 350) {

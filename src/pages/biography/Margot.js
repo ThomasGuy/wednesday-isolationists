@@ -38,7 +38,7 @@ function Biography() {
 
   return (
     <Layout>
-      <SEO title='Margot Graville' description='Margot Graville artist painter printmaker' />
+      <SEO title='Margot Graville' description='artist painter printmaker' />
       <Grid>
         <Row>
           <Image>

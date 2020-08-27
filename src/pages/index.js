@@ -45,11 +45,15 @@ export default function Home() {
         <br />
         <h3>List of Isolationists</h3>
         <ul>
-          <li>Janet Mays</li>
+          <li>
+            <Link to='/biography/Jan'>Janet Mays</Link>
+          </li>
           <li>
             <Link to='/biography/Margot'>Margot Graville</Link>
           </li>
-          <li>Margaret Knott</li>
+          <li>
+            <Link to='/biography/Margaret'>Margaret Knott</Link>
+          </li>
           <li>
             <Link to='/biography/Charles'>Charles Penny</Link>
           </li>
@@ -59,7 +63,9 @@ export default function Home() {
           <li>
             <Link to='/biography/Gil'>Gilbert Whyman</Link>
           </li>
-          <li>Judy Ney</li>
+          <li>
+            <Link to='/biography/Judy'>Judy Ney</Link>
+          </li>
           <li>
             <Link to='/biography/Suzanne'>Suzanne Ewart</Link>
           </li>

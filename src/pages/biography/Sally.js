@@ -10,15 +10,20 @@ import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const Sally_QUERY = graphql`
   query bioSally {
-    allFile(filter: { relativeDirectory: { regex: "/biography/Sally/" } }) {
-      edges {
-        node {
-          relativePath
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+    bg: allFile(filter: { relativePath: { regex: "/biography/Sally/bg/" } }) {
+      nodes {
+        relativePath
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
+        }
+      }
+    }
+    mug: file(relativePath: { eq: "biography/Sally/mug.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
         }
       }
     }
@@ -27,23 +32,21 @@ const Sally_QUERY = graphql`
 
 function Biography() {
   const data = useStaticQuery(Sally_QUERY);
-  const bioPics = data.allFile.edges.reduce((acc, { node }) => {
+  const bioPics = data.bg.nodes.reduce((acc, node) => {
     let path = node.relativePath.split('.')[0];
-    let idx = path.split('/').slice(-1).pop();
-    acc[idx] = {
+    let key = path.split('/').slice(-1).pop();
+    acc[key] = {
       fluid: node.childImageSharp.fluid,
-      alt: idx,
+      alt: key,
     };
     return acc;
   }, {});
-
-  console.log(bioPics);
 
   return (
     <Layout>
       <SEO
         title='Sally Scott'
-        description='Sally Scott artist painter architectural glass etching lithography'
+        description='artist painter architectural glass etching lithography'
       />
       <Grid>
         <Row>
@@ -54,7 +57,11 @@ function Biography() {
 
         <Row>
           <Image width={'200px'}>
-            <Img title='Sally Scott artist' fluid={bioPics['mug'].fluid} alt='Sally Scott artist' />
+            <Img
+              title='Sally Scott'
+              fluid={data.mug.childImageSharp.fluid}
+              alt='Sally Scott artist'
+            />
           </Image>
           <Col>
             <Title>
