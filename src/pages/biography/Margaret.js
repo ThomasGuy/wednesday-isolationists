@@ -82,39 +82,32 @@ function Biography() {
               Mason and the Edinburgh  Festival, and her work was published in Designers in Britain.
             </p>
             <p>
-              She learnt Ceramics in Adult Education classes, taught it there and for the John Lewis
-              Partnership pottery club.
+              She studied Ceramics in Adult Education classes, taught at Putney Adult education
+              institute and at the John Lewis Partnership pottery club.
             </p>
             <p>
               She started etching at Putney School of Art, where she had a solo exhibition. She then
               discovered the silk screen class where she started monoprinting.   She became a member
               of Printmakers Council, and her work was regularly  exhibited.  Shows included were
-              the RA Summer Show, Originals 04 and the  Discerning Eye at the Mall Galleries.
+              the RA Summer Exhibition, Originals 04 and the  Discerning Eye at the Mall Galleries.
             </p>
             <p>
-              She has always been with Will’s Art Warehouse, and shows there now. Working as a
-              printmaker as well as a painter, her work has been published in  'Printmaking Today'
-              and 'Artist Magazine’.
+              She shows with Will’s Art Warehouse. Working as a printmaker as well as a painter, her
+              work has been published in  'Printmaking Today' and 'Artist Magazine’.
             </p>
             <p>
-              Her etchings are covering the walls of the restaurant ‘Artisans of Sardinia’ in Lacy
-              Road, Putney, London SW15, where she also has a Margaret Knott room, with etchings and
-              paintings of Putney and Putney Bridge.
+              Her etchings cover the walls of the restaurant ‘Artisans of Sardinia’ in Lacy Road,
+              Putney, London SW15, where there is a Margaret Knott room, with etchings and paintings
+              of Putney and Putney Bridge.
             </p>
             <p>
-              Today she works mainly in Gouache and Graphite and sometimes Linseed oil, and prefers
-              a decorators 1” brush! She has always been with Will’s Art Warehouse, and shows there
-              now. Working as a printmaker as well as a painter, her work has been published in 
+              She has exhibited with Will’s Art Warehouse since they began, and shows there now.
+              Working as a printmaker as well as a painter, her work has been published in
               'Printmaking Today' and 'Artist Magazine’.
             </p>
             <p>
-              Her etchings are covering the walls of the restaurant ‘Artisans of Sardinia’ in Lacy
-              Road, Putney, London SW15, where she also has a Margaret Knott room, with etchings and
-              paintings of Putney and Putney Bridge.
-            </p>
-            <p>
-              Today she works mainly in Gouache and Graphite and sometimes Linseed oil, and prefers
-              a decorators 1” brush!
+              She works mainly in Gouache, Graphite and sometimes Linseed oil, and prefers to use a
+              decorators 1” brush!
             </p>
           </Col>
         </Row>
@@ -123,7 +116,7 @@ function Biography() {
             <p>Paintings & prints can be seen on the following website</p>
             <ul>
               <li>
-                <a href='https://www.wills-art.com'>Wills art wharehouse</a>
+                <a href='https://www.wills-art.com'>Will's art wharehouse</a>
               </li>
             </ul>
           </Col>

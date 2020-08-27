@@ -34,9 +34,10 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^3.11.0",
-    "react-spring": "^8.0.27",
+    "react-spring": "^9.0.0-rc.3",
     "react-swipe-hook": "^0.1.2",
     "react-typography": "^0.16.19",
+    "react-use-gesture": "^7.0.15",
     "styled-components": "^5.1.1",
     "typography": "^0.16.19",
     "typography-theme-kirkham": "^0.16.19"

@@ -51,7 +51,6 @@ function Biography() {
             <Img fluid={bioPics['Judy'].fluid} alt='Judy Ney' />
           </Image>
         </Row>
-
         <Row>
           <Image width={'200px'}>
             <Img title='Judy Ney' fluid={data.mug.childImageSharp.fluid} alt='Judy Ney artist' />
@@ -69,7 +68,6 @@ function Biography() {
             </div>
           </Col>
         </Row>
-
         <Row>
           <Col>
             <p>I have loved drawing and painting since my earliest years.</p>
@@ -86,25 +84,6 @@ function Biography() {
             <p>Now retired I can once again immerse myself in art.</p>
           </Col>
         </Row>
-        {/* <Row>
-          <Col>
-            <p>Paintings, glasswork and prints can be seen on the following websites.</p>
-            <ul>
-              <li>
-                <a href='https://www.JudyNeyartist.co.uk'>Judy Ney artist</a>
-              </li>
-              <li>
-                <a href='https://www.chelseaartsociety.org.uk'>Chelsea Arts Society</a>
-              </li>
-              <li>
-                <a href='https://www.richmondprintmakers.co.uk'>Richmond Printmakers</a>
-              </li>
-              <li>
-                <a href='https://www.grapevinegallery.co.uk'>Grapevine Gallery</a>
-              </li>
-            </ul>
-          </Col>
-        </Row> */}
       </Grid>
     </Layout>
   );
