@@ -1,0 +1,8 @@
+---
+subject: 'Largeish Fruit'
+week: 'week24'
+date: '2020-07-19'
+artist: 'Judy'
+dimensions: '25x30 cm'
+slug: 'week24/Judy.jpg'
+---
