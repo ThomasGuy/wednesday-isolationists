@@ -86,10 +86,11 @@ function Biography() {
               institute and at the John Lewis Partnership pottery club.
             </p>
             <p>
-              She started etching at Putney School of Art, where she had a solo exhibition. She then
-              discovered the silk screen class where she started monoprinting.   She became a member
-              of Printmakers Council, and her work was regularly  exhibited.  Shows included were
-              the RA Summer Exhibition, Originals 04 and the  Discerning Eye at the Mall Galleries.
+              Margaret started etching at Putney School of Art, where she had a solo exhibition. She
+              then discovered the silk screen class where she started monoprinting.   She became a
+              member of Printmakers Council, and her work was regularly  exhibited.  Shows included
+              were the RA Summer Exhibition, Originals 04 and the Discerning Eye at the Mall
+              Galleries.
             </p>
             <p>
               Her etchings cover the walls of the restaurant ‘Artisans of Sardinia’ in Lacy Road,
@@ -97,8 +98,8 @@ function Biography() {
               of Putney and Putney Bridge.
             </p>
             <p>
-              She has exhibited with Will’s Art Warehouse since they began, and shows there now.
-              Working as a printmaker as well as a painter, her work has been published in
+              Margaret has exhibited with Will’s Art Warehouse since they began, and shows there
+              now. Working as a printmaker as well as a painter, her work has been published in
               'Printmaking Today' and 'Artist Magazine’.
             </p>
             <p>
@@ -112,7 +113,7 @@ function Biography() {
             <p>Paintings & prints can be seen on the following website</p>
             <ul>
               <li>
-                <a href='https://www.wills-art.com'>Will's art warehouse</a>
+                <a href='https://www.wills-art.com'>Will's Art Warehouse</a>
               </li>
             </ul>
           </Col>
