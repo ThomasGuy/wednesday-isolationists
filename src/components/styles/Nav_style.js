@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { animated } from 'react-spring'
+import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 export const AniNav = styled(animated.div)`
   position: fixed;
@@ -11,6 +11,10 @@ export const AniNav = styled(animated.div)`
   padding: 0 10px;
   background: #524763;
   z-index: 10;
+
+  ul {
+    list-style: none;
+  }
 
   a {
     display: block;
@@ -28,4 +32,4 @@ export const AniNav = styled(animated.div)`
   nav {
     list-style: none;
   }
-`
+`;

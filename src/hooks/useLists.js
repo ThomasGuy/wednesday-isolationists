@@ -1,4 +1,4 @@
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby';
 
 const ALL_FILES_QUERY = graphql`
   query files {
@@ -8,25 +8,26 @@ const ALL_FILES_QUERY = graphql`
           frontmatter {
             artist
             subject
+            week
           }
         }
       }
     }
   }
-`
+`;
 
 const useLists = () => {
-  let artists = new Set()
-  let subjects = new Set()
-  const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY)
+  let artists = new Set();
+  let subjectObj = {};
+  const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY);
   allMarkdownRemark.edges.forEach(({ node }) => {
-    let newArtist = node.frontmatter.artist
-    let newSubject = node.frontmatter.subject
-    if (newArtist) artists.add(newArtist)
-    if (newSubject) subjects.add(newSubject)
-  })
+    let newArtist = node.frontmatter.artist;
+    let newSubject = node.frontmatter.subject;
+    if (newArtist) artists.add(newArtist);
+    if (newSubject) subjectObj[node.frontmatter.week] = newSubject;
+  });
 
-  return [[...artists], [...subjects].sort()]
-}
+  return [[...artists], subjectObj];
+};
 
-export default useLists
+export default useLists;

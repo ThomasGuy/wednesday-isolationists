@@ -22,7 +22,7 @@ const META_ISOLATIONISTS = graphql`
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(META_ISOLATIONISTS);
-  const [artists, subjects] = useLists();
+  const [artists, subjectObj] = useLists();
   const [isArtListOpen, setArtListOpen] = useState(false);
   const [isSubListOpen, setSubListOpen] = useState(false);
 
@@ -32,7 +32,11 @@ const Layout = ({ children }) => {
     </li>
   ));
 
-  const subList = subjects.map(subject => (
+  const weeks = Object.fromEntries(
+    Object.entries(subjectObj).map(([key, value]) => [parseInt(key.substring(4)), value]),
+  );
+
+  const subList = Object.values(weeks).map(subject => (
     <li key={subject} onClick={() => setSubListOpen(false)}>
       <Link to={`/subjects/${subject}`}>{subject}</Link>
     </li>
@@ -53,11 +57,11 @@ const Layout = ({ children }) => {
 
       <div>
         <Header setArt={setArtListOpen} setSub={setSubListOpen} />
-        <Nav style={showArtList} list={artList} />
-        <Nav style={showSubList} list={subList} />
+        <Nav style={showArtList} list={artList} ordered={false} />
+        <Nav style={showSubList} list={subList} ordered={true} />
         <main>{children}</main>
         <footer>
-          <a href="mailto:twguy.webdev@gmail.com">
+          <a href='mailto:twguy.webdev@gmail.com'>
             TWGuy web development <FaEnvelope />
           </a>
         </footer>
