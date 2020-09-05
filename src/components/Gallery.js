@@ -16,7 +16,7 @@ const Gallery = ({ data, location }) => {
   const [isSticky, setSticky] = useState(false);
   const ref = useRef(null);
 
-  // stick the Artist Name to the top of the page
+  // stick the Artist Title Bar to the top of the page
   useEffect(() => {
     const handleScroll = () => {
       if (ref.current) {
