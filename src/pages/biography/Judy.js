@@ -75,11 +75,6 @@ function Biography() {
               I became a professional fashion designer following a course at Kingston College of
               Art, and designed and made jewellery while bringing up my children.
             </p>
-            <p>
-              From 1986 to 2000 she worked in partnership with David Peace, as Peace & Ney for
-              collaboration on architectural glass projects. For details of her architectural glass
-              work see her website.
-            </p>
             <p>In later life I retrained and worked as a counselling psychologist.</p>
             <p>Now retired I can once again immerse myself in art.</p>
           </Col>

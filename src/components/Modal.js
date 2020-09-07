@@ -7,9 +7,11 @@ import { ModalCard, ModalBase } from './styles';
 const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
   const [idx, setIdx] = useState(index);
 
-  const onClick = useCallback(() => setIdx(state => (state + 1) % gallery.length), [
-    gallery.length,
-  ]);
+  // const onClick = useCallback(() => setIdx(state => (state + 1) % gallery.length), [
+  //   gallery.length,
+  // ]);
+
+  const onClick = () => setIdx(state => (state + 1) % gallery.length);
 
   const pages = gallery.map(picture => ({ style }) => (
     <animated.div style={{ ...style }}>{picture}</animated.div>
@@ -21,10 +23,12 @@ const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
     leave: { opacity: 0, transform: 'translate3d(50%,0,0) scale(0.5)' },
   });
 
+  console.log('index', idx);
+
   return (
     <ModalBase style={{ pointerEvents }}>
       <ModalCard style={animation} onClick={onClick}>
-        <div onClick={onClick}>
+        <div>
           {nextPicTansition.map(({ item, props: animationPage, key }) => {
             const Page = pages[item];
             return <Page key={key} style={{ ...animationPage }} />;

@@ -1,24 +1,23 @@
-import React from 'react'
-import Img from 'gatsby-image'
-import { ImageWrapper } from './styles'
+import React from 'react';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
+import { animated } from 'react-spring';
+
+const ImageWrapper = styled(animated.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+`;
 
 const ModalBox = ({ fluid, alt }) => {
   return (
     <>
       <ImageWrapper>
-        <Img
-          fluid={fluid}
-          alt={alt}
-          style={{
-            position: 'absolute',
-            left: '0px',
-            top: '0px',
-            width: '100%',
-          }}
-        />
+        <Img fluid={fluid} alt={alt} />
       </ImageWrapper>
     </>
-  )
-}
+  );
+};
 
-export default ModalBox
+export default ModalBox;

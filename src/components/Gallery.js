@@ -49,7 +49,7 @@ const Gallery = ({ data, location }) => {
     );
   });
 
-  // imaage files with metadata for this Gallery modal
+  // imaage files without metadata for this Gallery modal
   const thisGalleryModal = data.allFile.edges.map(({ node }) => {
     return (
       <ModalBox
@@ -82,6 +82,9 @@ const Gallery = ({ data, location }) => {
     const value = Object.values(imageData)[0];
     return isArtistPage ? value.artist : value.subject;
   };
+
+  console.log('gallery', thisGalleryFluid.length);
+  console.log('modal', thisGalleryModal.length);
 
   return (
     <Layout>
