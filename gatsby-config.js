@@ -3,10 +3,11 @@ module.exports = {
     title: `Wednesday Isolationists`,
     description: `A collective of UK Artists had no name before the Covid Lockdown, but with this new way of working from home they became the 'Wednesday Isolationists'`,
     author: `TWGuy`,
-    siteUrl: 'https://objective-khorana-6827da.netlify.app',
+    siteUrl: 'https://wednesday-isolationists.co.uk',
   },
   plugins: [
     `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
