@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: 'https://wednesday-isolationists.co.uk',
   },
   plugins: [
-    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-advanced-sitemap`,
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-react-helmet`,
@@ -14,6 +13,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
+    {
+      resolve: `gatsby-plugin-preload-fonts`,
+      options: {
+        crossOrigin: `use-credentials`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
