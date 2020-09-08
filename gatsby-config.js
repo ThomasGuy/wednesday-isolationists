@@ -11,7 +11,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-netlify-cms`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -50,14 +50,10 @@ module.exports = {
         background_color: `#282c34`,
         theme_color: `#282c34`,
         display: `standalone`,
+        icon: 'src/icons/gatsby-icon.png',
+        crossOrigin: `use-credentials`,
       },
     },
-    {
-      resolve: `gatsby-plugin-offline`,
-      // options: {
-      //   precachePages: [`/about-us/`, `/projects/*`],
-      // },
-    },
-    `gatsby-plugin-netlify`, // make sure to put this last in the array
+    `gatsby-plugin-offline`, // make sure to put this last in the array
   ],
 };
