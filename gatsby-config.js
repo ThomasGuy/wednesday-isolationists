@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: 'https://wednesday-isolationists.co.uk',
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,

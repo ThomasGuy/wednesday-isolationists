@@ -20,7 +20,7 @@ const META_ISOLATIONISTS = graphql`
   }
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title = '' }) => {
   const data = useStaticQuery(META_ISOLATIONISTS);
   const [artists, subjectObj] = useLists();
   const [isArtListOpen, setArtListOpen] = useState(false);
@@ -53,7 +53,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyles />
-      <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
+      <SEO
+        title={title || data.site.siteMetadata.title}
+        description={data.site.siteMetadata.description}
+      />
 
       <div>
         <Header setArt={setArtListOpen} setSub={setSubListOpen} />

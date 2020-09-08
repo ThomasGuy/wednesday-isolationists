@@ -87,7 +87,7 @@ const Gallery = ({ data, location }) => {
   console.log('modal', thisGalleryModal.length);
 
   return (
-    <Layout>
+    <Layout title={title()}>
       <div className={`sticky-wrapper${isSticky ? ' sticky' : ''}`} ref={ref}>
         <StickyTitle title={title()} isArtist={isArtistPage} />
       </div>
