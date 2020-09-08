@@ -65,7 +65,7 @@ module.exports = {
         //     purpose: 'any maskable',
         //   },
         // ],
-        Icon: 'src/icons/gatsby-icon.png',
+        icon: 'src/icons/gatsby-icon.png',
         crossOrigin: `use-credentials`,
       },
     },
