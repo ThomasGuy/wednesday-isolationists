@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: 'https://wednesday-isolationists.co.uk',
   },
   plugins: [
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-advanced-sitemap`,
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-react-helmet`,
@@ -51,7 +52,15 @@ module.exports = {
         background_color: `#282c34`,
         theme_color: `#282c34`,
         display: `standalone`,
-        icon: 'src/icons/gatsby-icon.png',
+        // icons: [
+        //   {
+        //     src: 'src/icons/gatsby-icon.png',
+        //     type: 'image/png',
+        //     sizes: '196x196',
+        //     purpose: 'any maskable',
+        //   },
+        // ],
+        Icon: 'src/icons/gatsby-icon.png',
         crossOrigin: `use-credentials`,
       },
     },

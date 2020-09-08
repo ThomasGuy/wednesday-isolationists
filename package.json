@@ -6,6 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
+    "preload-fonts": "gatsby-preload-fonts",
     "develop": "gatsby develop",
     "https": "gatsby develop -- --https",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
@@ -21,6 +22,7 @@
     "gatsby-plugin-advanced-sitemap": "^1.5.5",
     "gatsby-plugin-manifest": "^2.4.28",
     "gatsby-plugin-offline": "^3.2.27",
+    "gatsby-plugin-preload-fonts": "^1.2.24",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.32",
