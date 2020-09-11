@@ -10,8 +10,15 @@ module.exports = {
     'gatsby-plugin-robots-txt',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
+    // `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        // The option defaults to true
+        checkSupportedExtensions: false,
+      },
+    },
 
     {
       resolve: `gatsby-plugin-preload-fonts`,
