@@ -5,7 +5,7 @@
   "version": "1.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "npm run clean && gatsby build",
     "preload-fonts": "gatsby-preload-fonts",
     "develop": "gatsby develop",
     "https": "gatsby develop -- --https",
