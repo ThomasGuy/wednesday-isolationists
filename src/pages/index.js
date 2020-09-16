@@ -46,7 +46,7 @@ export default function Home() {
         <h3>List of Isolationists</h3>
         <ul>
           <li>
-            <Link to='/biography/Jan'>Janet Mays</Link>
+            <Link to='/biography/Janet'>Janet Mays</Link>
           </li>
           <li>
             <Link to='/biography/Margot'>Margot Graville</Link>
@@ -61,7 +61,7 @@ export default function Home() {
             <Link to='/biography/Sally'>Sally Scott</Link>
           </li>
           <li>
-            <Link to='/biography/Gil'>Gilbert Whyman</Link>
+            <Link to='/biography/Gilbert'>Gilbert Whyman</Link>
           </li>
           <li>
             <Link to='/biography/Judy'>Judy Ney</Link>
