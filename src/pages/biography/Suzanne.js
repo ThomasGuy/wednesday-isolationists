@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import { FaEnvelope } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const Suzanne_QUERY = graphql`
@@ -37,8 +36,7 @@ function Biography() {
   }, {});
 
   return (
-    <Layout>
-      <SEO title='Suzanne Ewart' description='artist painter graphic design illustrator' />
+    <Layout title='Suzanne Ewart' description='artist painter graphic design illustrator'>
       <Grid>
         <Row>
           <Image>

@@ -1,5 +1,16 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
+export const artistNames = {
+  Charles: 'Charles Penny',
+  Gil: 'Gilbert Whyman',
+  Jan: 'Janet Mays',
+  Judy: 'Judy Ney',
+  Margaret: 'Margaret Knott',
+  Margot: 'Margot Graville',
+  Sally: 'Sally Scott',
+  Suzanne: 'Suzanne Ewart',
+};
+
 const ALL_FILES_QUERY = graphql`
   query files {
     allMarkdownRemark {
@@ -16,7 +27,7 @@ const ALL_FILES_QUERY = graphql`
   }
 `;
 
-const useLists = () => {
+export const useLists = () => {
   let artists = new Set();
   let subjectObj = {};
   const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY);
@@ -27,7 +38,5 @@ const useLists = () => {
     if (newSubject) subjectObj[node.frontmatter.week] = newSubject;
   });
 
-  return [[...artists], subjectObj];
+  return [[...artists].sort(), subjectObj];
 };
-
-export default useLists;

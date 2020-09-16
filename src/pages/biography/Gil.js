@@ -4,7 +4,6 @@ import Img from 'gatsby-image';
 import { FaEnvelope } from 'react-icons/fa';
 
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const GIL_QUERY = graphql`
@@ -37,11 +36,9 @@ function Biography() {
   }, {});
 
   return (
-    <Layout>
-      <SEO
-        title='Gilbert Whyman'
-        description='artist sculpter metal welder painter architect life drawing'
-      />
+    <Layout
+      title='Gilbert Whyman'
+      description='artist sculpter metal welder painter architect life drawing'>
       <Grid>
         <Row>
           <Image>

@@ -5,7 +5,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import GlobalStyles from './globalStyles';
 import Nav from './Nav';
-import useLists from '../hooks/useLists';
+import { useLists, artistNames } from '../hooks/useLists';
 import SEO from './seo';
 import Header from './Header';
 
@@ -20,7 +20,7 @@ const META_ISOLATIONISTS = graphql`
   }
 `;
 
-const Layout = ({ children, title = '' }) => {
+const Layout = ({ children, title = '', description = '' }) => {
   const data = useStaticQuery(META_ISOLATIONISTS);
   const [artists, subjectObj] = useLists();
   const [isArtListOpen, setArtListOpen] = useState(false);
@@ -28,7 +28,7 @@ const Layout = ({ children, title = '' }) => {
 
   const artList = artists.map(artist => (
     <li key={artist} onClick={() => setArtListOpen(false)}>
-      <Link to={`/artists/${artist}`}>{artist}</Link>
+      <Link to={`/artists/${artist}`}>{artistNames[artist]}</Link>
     </li>
   ));
 
@@ -55,7 +55,7 @@ const Layout = ({ children, title = '' }) => {
       <GlobalStyles />
       <SEO
         title={title || data.site.siteMetadata.title}
-        description={data.site.siteMetadata.description}
+        description={description || data.site.siteMetadata.description}
       />
 
       <div>

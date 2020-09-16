@@ -5,7 +5,6 @@ import { FaEnvelope } from 'react-icons/fa';
 // import BackgroundSlider from 'gatsby-image-background-slider';
 
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const Jan_QUERY = graphql`
@@ -43,8 +42,7 @@ function Biography() {
   }, {});
 
   return (
-    <Layout>
-      <SEO title='Janet Mays' description='artist painter fashion design' />
+    <Layout title='Janet Mays' description='artist painter fashion design'>
       <Grid>
         <Row>
           <Image>

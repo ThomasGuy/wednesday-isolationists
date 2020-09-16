@@ -2,10 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { FaEnvelope } from 'react-icons/fa';
-// import BackgroundSlider from 'gatsby-image-background-slider';
 
 import Layout from '../../components/Layout';
-import SEO from '../../components/seo';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
 const Sally_QUERY = graphql`
@@ -43,11 +41,9 @@ function Biography() {
   }, {});
 
   return (
-    <Layout>
-      <SEO
-        title='Sally Scott'
-        description='artist painter architectural glass etching lithography'
-      />
+    <Layout
+      title='Sally Scott'
+      description='artist painter architectural glass etching lithography'>
       <Grid>
         <Row>
           <Image>

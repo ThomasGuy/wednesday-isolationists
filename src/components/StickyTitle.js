@@ -52,10 +52,10 @@ const Title = styled.div`
 
 const StickyTitle = ({ title, isArtist }) => {
   return (
-    <Title className="sticky-inner" isArtist={isArtist}>
+    <Title className='sticky-inner' isArtist={isArtist}>
       <div>{title}</div>
 
-      {isArtist && <Link to={`/biography/${title}`}>biography</Link>}
+      {isArtist && <Link to={`/biography/${title.split(' ')[0]}`}>biography</Link>}
     </Title>
   );
 };

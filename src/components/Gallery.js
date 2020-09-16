@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
-// import { useSpring } from 'react-spring'
 
 import PictureBox from './PictureBox';
 import ModalBox from './ModalBox';
@@ -8,6 +7,7 @@ import Layout from './Layout';
 import Modal from './Modal';
 import { GalleryLayout } from './styles';
 import StickyTitle from './StickyTitle';
+import { artistNames } from '../hooks/useLists';
 
 const Gallery = ({ data, location }) => {
   const [on, toggle] = useState(false);
@@ -80,11 +80,8 @@ const Gallery = ({ data, location }) => {
   // render title
   const title = () => {
     const value = Object.values(imageData)[0];
-    return isArtistPage ? value.artist : value.subject;
+    return isArtistPage ? artistNames[value.artist] : value.subject;
   };
-
-  console.log('gallery', thisGalleryFluid.length);
-  console.log('modal', thisGalleryModal.length);
 
   return (
     <Layout title={title()}>
