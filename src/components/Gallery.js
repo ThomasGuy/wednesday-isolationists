@@ -7,7 +7,7 @@ import Layout from './Layout';
 import Modal from './Modal';
 import { GalleryLayout } from './styles';
 import StickyTitle from './StickyTitle';
-import { artistNames } from '../hooks/useLists';
+import artistNames from '../utils/artistName';
 
 const Gallery = ({ data, location }) => {
   const [on, toggle] = useState(false);
@@ -43,8 +43,8 @@ const Gallery = ({ data, location }) => {
         key={node.id}
         fluid={node.childImageSharp.fluid}
         alt={node.relativePath.split('.')[0]}
-        meta={imageData[node.relativePath]}
         pathname={location.pathname}
+        meta={imageData[node.relativePath]}
       />
     );
   });
@@ -56,6 +56,7 @@ const Gallery = ({ data, location }) => {
         key={node.id}
         fluid={node.childImageSharp.fluid}
         alt={node.relativePath.split('.')[0]}
+        meta={imageData[node.relativePath]}
       />
     );
   });

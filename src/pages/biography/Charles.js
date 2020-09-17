@@ -40,7 +40,11 @@ function Biography() {
       <Grid>
         <Row>
           <Image>
-            <Img fluid={bioPics['Charles'].fluid} alt={bioPics['Charles'].alt} />
+            <Img
+              title='Charles Penny'
+              fluid={bioPics['Charles'].fluid}
+              alt={bioPics['Charles'].alt}
+            />
           </Image>
         </Row>
 

@@ -23,8 +23,6 @@ const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
     leave: { opacity: 0, transform: 'translate3d(50%,0,0) scale(0.5)' },
   });
 
-  console.log('index', idx);
-
   return (
     <ModalBase style={{ pointerEvents }}>
       <ModalCard style={animation} onClick={onClick}>

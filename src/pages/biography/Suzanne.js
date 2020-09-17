@@ -46,7 +46,7 @@ function Biography() {
 
         <Row>
           <Image width={'200px'}>
-            <Img fluid={bioPics['mug'].fluid} alt='Suzanne_portrait' />
+            <Img title='Suzanne Ewart' fluid={bioPics['mug'].fluid} alt='Suzanne_portrait' />
           </Image>
           <Col>
             <Title>

@@ -47,7 +47,11 @@ function Biography() {
       <Grid>
         <Row>
           <Image>
-            <Img fluid={bioPics['lockdown'].fluid} alt={bioPics['lockdown'].alt} />
+            <Img
+              title='Sally Scott Lockdown Painting oil on canvas'
+              fluid={bioPics['lockdown'].fluid}
+              alt={bioPics['lockdown'].alt}
+            />
           </Image>
         </Row>
 

@@ -25,7 +25,7 @@ export default function Home() {
       <SEO title='Wednesday Isolationists' />
       <PageTitle>Wednesday Isolationists</PageTitle>
 
-      <Img title='Sallt Scott Studio' fluid={data.file.childImageSharp.fluid} />
+      <Img title='Sally Scott Studio' fluid={data.file.childImageSharp.fluid} />
 
       <FrontPage>
         <p>

@@ -47,8 +47,12 @@ function Biography() {
         </Row>
 
         <Row>
-          <Image width={'200px'} size={1}>
-            <Img fluid={bioPics['mug_steel'].fluid} alt='Gil self portrait sculpture' />
+          <Image width={'200px'}>
+            <Img
+              title='Gilbert Whyman self portrait sculpture'
+              fluid={bioPics['mug_steel'].fluid}
+              alt='Gil self portrait sculpture'
+            />
           </Image>
           <Col>
             <Title>

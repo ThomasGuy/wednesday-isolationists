@@ -5,7 +5,8 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import GlobalStyles from './globalStyles';
 import Nav from './Nav';
-import { useLists, artistNames } from '../hooks/useLists';
+import useLists from '../hooks/useLists';
+import artistNames from '../utils/artistName';
 import SEO from './seo';
 import Header from './Header';
 

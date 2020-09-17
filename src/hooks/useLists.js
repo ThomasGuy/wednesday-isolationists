@@ -1,16 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
 
-export const artistNames = {
-  Charles: 'Charles Penny',
-  Gil: 'Gilbert Whyman',
-  Jan: 'Janet Mays',
-  Judy: 'Judy Ney',
-  Margaret: 'Margaret Knott',
-  Margot: 'Margot Graville',
-  Sally: 'Sally Scott',
-  Suzanne: 'Suzanne Ewart',
-};
-
 const ALL_FILES_QUERY = graphql`
   query files {
     allMarkdownRemark {
@@ -27,7 +16,7 @@ const ALL_FILES_QUERY = graphql`
   }
 `;
 
-export const useLists = () => {
+const useLists = () => {
   let artists = new Set();
   let subjectObj = {};
   const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY);
@@ -40,3 +29,5 @@ export const useLists = () => {
 
   return [[...artists].sort(), subjectObj];
 };
+
+export default useLists;
