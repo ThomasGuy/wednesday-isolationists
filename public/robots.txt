@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://wednesday-isolationists.co.uk/sitemap.xml
+Host: https://wednesday-isolationists.co.uk
