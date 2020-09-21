@@ -17,7 +17,7 @@ jspm_packages/
 .env*
 
 # gatsby files
-# .cache/
-# public
+.cache/
+public
 
 # .vscode

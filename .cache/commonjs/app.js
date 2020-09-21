@@ -43,19 +43,16 @@ window.___loader = _loader.publicLoader; // Let the site/plugins run code very e
 
   fetch(`/___services`).then(res => res.json()).then(services => {
     if (services.developstatusserver) {
-      let isRestarting = false;
       const parentSocket = (0, _socket.default)(`http://${window.location.hostname}:${services.developstatusserver.port}`);
-      parentSocket.on(`structured-log`, msg => {
-        if (!isRestarting && msg.type === `LOG_ACTION` && msg.action.type === `DEVELOP` && msg.action.payload === `RESTART_REQUIRED` && window.confirm(`The develop process needs to be restarted for the changes to ${msg.action.dirtyFile} to be applied.\nDo you want to restart the develop process now?`)) {
-          isRestarting = true;
-          parentSocket.emit(`develop:restart`, () => {
+      parentSocket.on(`develop:needs-restart`, msg => {
+        if (window.confirm(`The develop process needs to be restarted for the changes to ${msg.dirtyFile} to be applied.\nDo you want to restart the develop process now?`)) {
+          parentSocket.once(`develop:is-starting`, msg => {
             window.location.reload();
           });
-        }
-
-        if (isRestarting && msg.type === `LOG_ACTION` && msg.action.type === `SET_STATUS` && msg.action.payload === `SUCCESS`) {
-          isRestarting = false;
-          window.location.reload();
+          parentSocket.once(`develop:started`, msg => {
+            window.location.reload();
+          });
+          parentSocket.emit(`develop:restart`);
         }
       }); // Prevents certain browsers spamming XHR 'ERR_CONNECTION_REFUSED'
       // errors within the console, such as when exiting the develop process.

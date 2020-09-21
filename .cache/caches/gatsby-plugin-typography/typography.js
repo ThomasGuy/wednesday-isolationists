@@ -1,1 +1,1 @@
-module.exports = require("/home/bella20/projects_2020/websites/wednesday-isolationists/src/utils/typography")
+module.exports = require("/home/bella20/projects2020/websites/wednesday-isolationists/src/utils/typography")
