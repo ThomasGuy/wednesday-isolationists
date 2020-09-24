@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useTransition, animated } from 'react-spring';
 import { FiX } from 'react-icons/fi';
 

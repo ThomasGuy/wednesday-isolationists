@@ -1,1 +1,0 @@
-module.exports = require("/home/bella20/projects2020/websites/wednesday-isolationists/src/utils/typography")
