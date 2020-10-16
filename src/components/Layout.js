@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSpring } from 'react-spring';
 import { FaEnvelope } from 'react-icons/fa';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import 'normalize.css';
+
 
 import GlobalStyles from './globalStyles';
 import Nav from './Nav';
