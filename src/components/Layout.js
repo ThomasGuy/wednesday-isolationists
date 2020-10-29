@@ -3,13 +3,13 @@ import { useSpring } from 'react-spring';
 import { FaEnvelope } from 'react-icons/fa';
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
-
 import GlobalStyles from './globalStyles';
 import Nav from './Nav';
 import useLists from '../hooks/useLists';
 import artistNames from '../utils/artistName';
 import SEO from './seo';
 import Header from './Header';
+
 
 const META_ISOLATIONISTS = graphql`
   query {
@@ -60,17 +60,15 @@ const Layout = ({ children, title = '', description = '' }) => {
         description={description || data.site.siteMetadata.description}
       />
 
-      <div>
-        <Header setArt={setArtListOpen} setSub={setSubListOpen} />
-        <Nav style={showArtList} list={artList} ordered={false} />
-        <Nav style={showSubList} list={subList} ordered={true} />
-        <main>{children}</main>
-        <footer>
-          <a href='mailto:twguy.webdev@gmail.com'>
-            TWGuy web development <FaEnvelope />
-          </a>
-        </footer>
-      </div>
+      <Header setArt={setArtListOpen} setSub={setSubListOpen} />
+      <Nav style={showArtList} list={artList} ordered={false} />
+      <Nav style={showSubList} list={subList} ordered={true} />
+      <main>{children}</main>
+      <footer>
+        <a href='mailto:twguy.webdev@gmail.com'>
+          TWGuy web development <FaEnvelope />
+        </a>
+      </footer>
     </>
   );
 };
