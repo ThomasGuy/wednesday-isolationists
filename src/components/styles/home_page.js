@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const PageTitle = styled.div`
-  color: #b88f83;
+  color: var(--title);
   text-align: center;
   margin: 2rem 0;
   font-size: 1.1rem;
@@ -54,6 +54,6 @@ export const FrontPage = styled.article`
 
   span {
     font-size: 1.3rem;
-    color: #b88f83;
+    color: var(--title);
   }
 `;

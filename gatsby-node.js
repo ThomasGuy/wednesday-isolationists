@@ -23,6 +23,7 @@ exports.createPages = ({graphql, actions}) => {
                 slug
                 date
                 week
+                sold
               }
             }
           }

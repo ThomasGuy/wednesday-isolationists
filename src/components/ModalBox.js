@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { animated } from 'react-spring';
 import artistNames from '../utils/artistName';
+import { SoldTagModal } from './styles'
 
 const ImageWrapper = styled(animated.div)`
   position: absolute;
@@ -23,7 +24,8 @@ const ModalBox = ({ fluid, alt, meta }) => {
     <>
       <ImageWrapper>
         <Img fluid={fluid} alt={alt} />
-        <p>{`${artistNames[meta.artist]} - ${meta.subject}  \n${meta.dimensions}`}</p>
+        <p>{`${artistNames[meta.artist]} - ${meta.subject} ${'  '} ${meta.dimensions}`}</p>
+        { meta.sold && <SoldTagModal>SOLD</SoldTagModal> }
       </ImageWrapper>
     </>
   );

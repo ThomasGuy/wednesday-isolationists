@@ -2,8 +2,10 @@ import React from 'react';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import artistNames from '../utils/artistName';
+import { SoldTag } from './styles';
 
 const PictureStyles = styled.div`
+  position: relative;
   text-align: center;
 
   p {
@@ -27,6 +29,7 @@ const PictureBox = ({ fluid, alt, meta, pathname }) => {
         ) : (
           <p>{`${artistNames[meta.artist]}`}</p>
         )}
+        { meta.sold && <SoldTag>SOLD</SoldTag> }
       </PictureStyles>
     </>
   );

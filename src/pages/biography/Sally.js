@@ -126,11 +126,20 @@ function Biography() {
                 <a href='https://www.gge.org.uk'>The Guild of Glass Engravers</a>
               </li>
               <li>
-                <a title='follow me on facebook' href='https://www.facebook.com/sallyscottartist'>
+                <a id='social' title='follow me on facebook' href='https://www.facebook.com/sallyscottartist'>
                   <img
                     style={{ marginBottom: '0' }}
                     alt='follow me on facebook'
                     src='https://c866088.ssl.cf3.rackcdn.com/assets/facebook30x30.png'
+                    border={0}
+                  />
+                </a>
+
+                <a id='social' title='follow me on Instagram' href='http://www.instagram.com/sallyscott.guy'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on instagram'
+                    src="https://img.icons8.com/office/30/000000/instagram-new.png"
                     border={0}
                   />
                 </a>

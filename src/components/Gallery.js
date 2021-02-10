@@ -20,7 +20,8 @@ const Gallery = ({ data, location }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (ref.current) {
-        setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0);
+        // setSticky(isArtistPage && ref.current.getBoundingClientRect().top <= 0);
+        setSticky(ref.current.getBoundingClientRect().top <= 0);
       }
     };
 
@@ -132,6 +133,7 @@ export const artistQuery = graphql`
             slug
             date
             week
+            sold
           }
         }
       }

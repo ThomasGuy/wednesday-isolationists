@@ -4,8 +4,9 @@ import { Link } from 'gatsby';
 
 const Title = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   background: #282c34;
   width: 100%;
   padding-top: 1rem;
@@ -33,7 +34,7 @@ const Title = styled.div`
     }
   }
 
-  & > a {
+  #bio {
     align-self: bottom;
     padding-left: 2rem;
     font-size: 0.7rem;
@@ -48,14 +49,33 @@ const Title = styled.div`
       padding-left: 4rem;
     }
   }
+
+  #sale {
+    color: #b88f83;
+    font-size: 0.7rem;
+    & > span { font-size: 0.6rem}
+
+    @media screen and (min-width: 368px) {
+      font-size: 1rem;
+      & > span { font-size: 0.8rem}
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.5rem;
+      & > span { font-size: 1rem}
+    }
+  }
+
 `;
 
 const StickyTitle = ({ title, isArtist }) => {
   return (
-    <Title className='sticky-inner' isArtist={isArtist}>
-      <div>{title}</div>
 
-      {isArtist && <Link to={`/biography/${title.split(' ')[0]}`}>biography</Link>}
+    <Title className='sticky-inner' isArtist={isArtist}>
+      <div>
+        {title} {isArtist && <Link id="bio" to={`/biography/${title.split(' ')[0]}`}>biography</Link>}
+      </div>
+      <p id="sale">All pictures for sale from £50 <span>email artist</span></p>
     </Title>
   );
 };
