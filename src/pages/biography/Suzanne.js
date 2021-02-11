@@ -83,16 +83,23 @@ function Biography() {
             <p>She paints in oil, acrylic and watercolour</p>
           </Col>
         </Row>
-        {/* <Row>
+        <Row>
           <Col>
-            <p>Suzanne's work can be seen on the following websites:-</p>
+            <p>Suzanne's work can be seen on social media.</p>
             <ul>
               <li>
-                <a href='https://www.suzanneewart.com'>Suzanne Ewart</a>
+                <a id='social' title='follow me on Instagram' href='http://www.instagram.com/suzanne.ewart'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on instagram'
+                    src="https://img.icons8.com/office/30/000000/instagram-new.png"
+                    border={0}
+                  />
+                </a>
               </li>
             </ul>
           </Col>
-        </Row> */}
+        </Row>
       </Grid>
     </Layout>
   );

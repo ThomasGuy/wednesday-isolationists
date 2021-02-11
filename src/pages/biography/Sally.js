@@ -105,7 +105,7 @@ function Biography() {
         </Row>
         <Row>
           <Col>
-            <p>Paintings, glasswork and prints can be seen on the following websites.</p>
+            <p>Sally's paintings, glasswork and prints can be seen on the following websites and social media.</p>
             <ul>
               <li>
                 <a href='https://www.sallyscottartist.co.uk'>Sally Scott artist</a>

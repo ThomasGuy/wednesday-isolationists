@@ -107,10 +107,20 @@ function Biography() {
         </Row>
         <Row>
           <Col>
-            <p>Paintings & prints can be seen on the following website</p>
+            <p>Margaret's paintings & prints can be seen on the following website and social media.</p>
             <ul>
               <li>
                 <a href='https://www.wills-art.com'>Will's Art Warehouse</a>
+              </li>
+              <li>
+                <a id='social' title='follow me on Instagram' href='http://www.instagram.com/margaret_g_knott'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on instagram'
+                    src="https://img.icons8.com/office/30/000000/instagram-new.png"
+                    border={0}
+                  />
+                </a>
               </li>
             </ul>
           </Col>

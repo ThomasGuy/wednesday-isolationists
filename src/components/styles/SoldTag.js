@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const SoldTag = styled.span`
   background: var(--red);
-  transform: rotate(8deg);
+  box-shadow: 1px 3px 2px var(--grey);
+  transform: rotate(7deg);
   color: var(--offwhite);
   font-weight: 600;
   padding: 5px 8px;
@@ -16,6 +17,7 @@ export const SoldTag = styled.span`
 
 export const SoldTagModal = styled.span`
   background: var(--red);
+  box-shadow: 1px 3px 2px var(--grey);
   transform: rotate(8deg);
   color: var(--offwhite);
   font-weight: 600;
@@ -29,6 +31,7 @@ export const SoldTagModal = styled.span`
   line-height: 1;
 
   @media screen and (min-width: 568px) {
+    box-shadow: 1px 4px 2px var(--grey);
     padding: 5px 10px;
     font-size: 2.5rem;
     line-height: 1.1;

@@ -12,12 +12,12 @@ export const Head = styled.header`
     background-color: purple;
     border-radius: 20px;
     flex: 1 1 auto;
-    box-shadow: 2px 4px #b9b3b3aa;
-    color: lightgrey;
+    box-shadow: 2px 4px 2px #b9b3b3aa;
+    color: var(--lightGrey);
 
     a {
       text-decoration: none;
-      color: lightgrey;
+      color: var(--lightGrey);;
     }
   }
 `

@@ -74,6 +74,23 @@ function Biography() {
             </p>
           </Col>
         </Row>
+        <Row>
+          <Col>
+            <p>Charles' paintings & prints can be seen on social media.</p>
+            <ul>
+              <li>
+                <a id='social' title='follow me on Instagram' href='http://www.instagram.com/charles.penny'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on instagram'
+                    src="https://img.icons8.com/office/30/000000/instagram-new.png"
+                    border={0}
+                  />
+                </a>
+              </li>
+            </ul>
+          </Col>
+        </Row>
       </Grid>
     </Layout>
   );

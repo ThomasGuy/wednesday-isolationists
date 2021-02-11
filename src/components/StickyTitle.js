@@ -39,7 +39,7 @@ const Title = styled.div`
     padding-left: 2rem;
     font-size: 0.7rem;
     text-decoration: none;
-    color: lightgrey;
+    color: var(--lightGrey);
 
     @media screen and (min-width: 368px) {
       font-size: 0.8rem;
@@ -51,7 +51,7 @@ const Title = styled.div`
   }
 
   #sale {
-    color: #b88f83;
+    color: var(--title);
     font-size: 0.7rem;
     & > span { font-size: 0.6rem}
 

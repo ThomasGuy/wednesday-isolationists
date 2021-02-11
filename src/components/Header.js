@@ -8,7 +8,7 @@ const Header = ({ setArt, setSub }) => {
       <button className="items">
         <Link to="/">Home</Link>
       </button>
-      <button className="items" title="list of Isolationists" onClick={() => setArt(true)}>
+      <button className="items" onClick={() => setArt(true)}>
         Artists
       </button>
       <button className="items" onClick={() => setSub(true)}>

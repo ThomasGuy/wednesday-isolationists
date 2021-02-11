@@ -92,13 +92,23 @@ function Biography() {
         </Row>
         <Row>
           <Col>
-            <p>Paintings & prints can be seen on the following websites.</p>
+            <p>Janet's paintings & prints can be seen on the following websites and social media.</p>
             <ul>
               <li>
                 <a href='https://www.richmondprintmakers.co.uk'>Richmond Printmakers</a>
               </li>
               <li>
                 <a href='http://www.putneyartists.org/'>Putney Artists</a>
+              </li>
+              <li>
+                  <a id='social' title='follow me on Instagram' href='http://www.instagram.com/janjanmays'>
+                  <img
+                    style={{ marginBottom: '0' }}
+                    alt='follow me on instagram'
+                    src="https://img.icons8.com/office/30/000000/instagram-new.png"
+                    border={0}
+                  />
+                </a>
               </li>
             </ul>
           </Col>
