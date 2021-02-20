@@ -53,10 +53,7 @@ function Biography() {
               <div>Suzanne Ewart</div>
             </Title>
             <div className='bottom'>
-              <a href='mailto:suzart@virginmedia.com'>
-                Email&nbsp;&nbsp;&nbsp;
-                <FaEnvelope />
-              </a>
+              <a href='http://www.suzanneewart.com/contact.html'>Please contact Suzanne here through her website</a>
             </div>
           </Col>
         </Row>
@@ -85,8 +82,11 @@ function Biography() {
         </Row>
         <Row>
           <Col>
-            <p>Suzanne's work can be seen on social media.</p>
+            <p>Suzanne's work can be seen on her website and through social media.</p>
             <ul>
+              <li>
+                <a href='http://www.suzanneewart.com'>Suzanne Ewart's website</a>
+              </li>
               <li>
                 <a id='social' title='follow me on Instagram' href='http://www.instagram.com/suzanne.ewart'>
                   <img

@@ -117,9 +117,6 @@ function Biography() {
                 <a href='https://www.richmondprintmakers.co.uk'>Richmond Printmakers</a>
               </li>
               <li>
-                <a href='https://www.grapevinegallery.co.uk'>Grapevine Gallery</a>
-              </li>
-              <li>
                 <a href='https://www.artworkersguild.org'>The Art workers Guild</a>
               </li>
               <li>
