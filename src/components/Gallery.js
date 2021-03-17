@@ -32,7 +32,7 @@ const Gallery = ({ data, location }) => {
     return () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
-  }, [isArtistPage]);
+  }, []);
 
   // Object for image metadata.. N.B. var 'bun' as in current bun
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {

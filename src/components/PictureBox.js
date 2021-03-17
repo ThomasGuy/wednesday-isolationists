@@ -15,24 +15,23 @@ const PictureStyles = styled.div`
   }
 `;
 
-const PictureBox = ({ fluid, alt, meta, pathname }) => (
-  <>
+const PictureBox = ({ fluid, alt, meta, pathname }) => {
+  const { artist, subject, dimensions, sold } = meta;
+  return (
     <PictureStyles>
       <Img
         fluid={fluid}
         alt={alt}
-        title={`${artistName[meta.artist]} - ${meta.subject} \n${
-          meta.dimensions
-        }`}
+        title={`${artistName[artist]} - ${subject} \n${dimensions}`}
       />
       {pathname.includes('artists') ? (
-        <p>{meta.subject}</p>
+        <p>{subject}</p>
       ) : (
-        <p>{`${artistName[meta.artist]}`}</p>
+        <p>{`${artistName[artist]}`}</p>
       )}
-      {meta.sold && <SoldTag>SOLD</SoldTag>}
+      {sold && <SoldTag>SOLD</SoldTag>}
     </PictureStyles>
-  </>
-);
+  );
+};
 
 export default PictureBox;

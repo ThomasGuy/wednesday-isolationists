@@ -1,15 +1,15 @@
 // N.B. from Sporty in reducer variable 'bun' is current as in 'current bun'
 
-const path = require('path')
+const path = require('path');
 
-exports.createPages = ({graphql, actions}) => {
-  const {createPage} = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
-    let artists = new Set() // all Artists
-    let subjects = new Set() // all Subjects
-    let artNodes = [] // graphQL nodes
-    let subjectNodes = []
+    const artists = new Set(); // all Artists
+    const subjects = new Set(); // all Subjects
+    let artNodes = []; // graphQL nodes
+    let subjectNodes = [];
     graphql(`
       {
         allMarkdownRemark {
@@ -30,19 +30,19 @@ exports.createPages = ({graphql, actions}) => {
         }
       }
     `).then(results => {
-      // get alist of all Artists and all Subjects
-      results.data.allMarkdownRemark.edges.forEach(({node}) => {
-        artists.add(node.frontmatter.artist)
-        subjects.add(node.frontmatter.subject)
-      })
+      // get a list of all Artists and all Subjects
+      results.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        artists.add(node.frontmatter.artist);
+        subjects.add(node.frontmatter.subject);
+      });
 
       // Create content for each Artist page
-      const artistList = [...artists]
+      const artistList = [...artists];
       artistList.forEach(artist => {
         // forach Artist get a list of all graphQL nodes
         artNodes = results.data.allMarkdownRemark.edges.filter(
-          ({node}) => node.frontmatter.artist === artist,
-        )
+          ({ node }) => node.frontmatter.artist === artist
+        );
 
         createPage({
           path: `/artists/${artist}`,
@@ -50,20 +50,20 @@ exports.createPages = ({graphql, actions}) => {
           context: {
             title: `${artist}`,
             slugs: artNodes.reduce(function (acc, bun) {
-              acc.push(bun.node.frontmatter.slug)
-              return acc
+              acc.push(bun.node.frontmatter.slug);
+              return acc;
             }, []),
           },
-        })
-      })
+        });
+      });
 
       // Create content foreach Subject page
-      const subjectList = [...subjects]
+      const subjectList = [...subjects];
       subjectList.forEach(subject => {
         // foreach subject get a list of all graphQL nodes
         subjectNodes = results.data.allMarkdownRemark.edges.filter(
-          ({node}) => node.frontmatter.subject === subject,
-        )
+          ({ node }) => node.frontmatter.subject === subject
+        );
 
         createPage({
           path: `/subjects/${subject}`,
@@ -71,14 +71,14 @@ exports.createPages = ({graphql, actions}) => {
           context: {
             title: `${subject}`,
             slugs: subjectNodes.reduce(function (acc, bun) {
-              acc.push(bun.node.frontmatter.slug)
-              return acc
+              acc.push(bun.node.frontmatter.slug);
+              return acc;
             }, []),
           },
-        })
-      })
+        });
+      });
 
-      resolve()
-    })
-  })
-}
+      resolve();
+    });
+  });
+};
