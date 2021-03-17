@@ -1,11 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Head = styled.header`
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
 
-  .items {
+  button {
+    outline: none;
     min-width: 100px;
     max-width: 180px;
     margin: 5px;
@@ -17,7 +18,13 @@ export const Head = styled.header`
 
     a {
       text-decoration: none;
-      color: var(--lightGrey);;
+      color: var(--lightGrey);
+    }
+
+    @media screen and (max-width: 367px) {
+      font-size: 0.7rem;
+      min-width: 70px;
+      max-width: 115px;
     }
   }
-`
+`;

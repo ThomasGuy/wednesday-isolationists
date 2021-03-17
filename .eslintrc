@@ -1,5 +1,6 @@
 {
-  "extends": [
-    "wesbos"
-  ]
+  "extends": ["wesbos"],
+  "rules": {
+    "react/prop-types": 0
+  }
 }

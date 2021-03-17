@@ -6,7 +6,7 @@ import { FaEnvelope } from 'react-icons/fa';
 import Layout from '../../components/Layout';
 import { Grid, Row, Col, Image, Title } from '../../components/styles';
 
-const Charles_QUERY = graphql`
+const CharlesQUERY = graphql`
   query bioCharles {
     allFile(filter: { relativeDirectory: { regex: "/biography/Charles/" } }) {
       edges {
@@ -24,10 +24,10 @@ const Charles_QUERY = graphql`
 `;
 
 function Biography() {
-  const data = useStaticQuery(Charles_QUERY);
+  const data = useStaticQuery(CharlesQUERY);
   const bioPics = data.allFile.edges.reduce((acc, { node }) => {
-    let path = node.relativePath.split('.')[0];
-    let idx = path.split('/').slice(-1).pop();
+    const path = node.relativePath.split('.')[0];
+    const idx = path.split('/').slice(-1).pop();
     acc[idx] = {
       fluid: node.childImageSharp.fluid,
       alt: idx,
@@ -36,28 +36,28 @@ function Biography() {
   }, {});
 
   return (
-    <Layout title='Charles Penny' description='artist painter teacher'>
+    <Layout title="Charles Penny" description="artist painter teacher">
       <Grid>
         <Row>
           <Image>
             <Img
-              title='Charles Penny'
-              fluid={bioPics['Charles'].fluid}
-              alt={bioPics['Charles'].alt}
+              title="Charles Penny"
+              fluid={bioPics.Charles.fluid}
+              alt={bioPics.Charles.alt}
             />
           </Image>
         </Row>
 
         <Row>
-          <Image width={'200px'}>
-            <Img fluid={bioPics['mug'].fluid} alt='Charles_portrait' />
+          <Image width="200px">
+            <Img fluid={bioPics.mug.fluid} alt="Charles_portrait" />
           </Image>
           <Col>
             <Title>
               <div>Charles Penny</div>
             </Title>
-            <div className='bottom'>
-              <a href='mailto:charles.penny@gmail.com'>
+            <div className="bottom">
+              <a href="mailto:charles.penny@gmail.com">
                 Email&nbsp;&nbsp;&nbsp;
                 <FaEnvelope />
               </a>
@@ -68,9 +68,9 @@ function Biography() {
         <Row>
           <Col>
             <p>
-              Charles Penny is well known for his cheerful and sun filled works. He has exhibited
-              widely in the UK, America, Japan and Morrocco. His work is in many public and private
-              collections worldwide.
+              Charles Penny is well known for his cheerful and sun filled works.
+              He has exhibited widely in the UK, America, Japan and Morrocco.
+              His work is in many public and private collections worldwide.
             </p>
           </Col>
         </Row>
@@ -79,10 +79,13 @@ function Biography() {
             <p>Charles' paintings & prints can be seen on social media.</p>
             <ul>
               <li>
-                <a id='social' title='follow me on Instagram' href='http://www.instagram.com/charles.penny'>
+                <a
+                  id="social"
+                  title="follow me on Instagram"
+                  href="http://www.instagram.com/charles.penny">
                   <img
                     style={{ marginBottom: '0' }}
-                    alt='follow me on instagram'
+                    alt="follow me on instagram"
                     src="https://img.icons8.com/office/30/000000/instagram-new.png"
                     border={0}
                   />

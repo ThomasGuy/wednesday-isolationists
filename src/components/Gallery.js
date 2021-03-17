@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from 'react';
 import { graphql } from 'gatsby';
 
@@ -7,7 +10,7 @@ import Layout from './Layout';
 import Modal from './Modal';
 import { GalleryLayout } from './styles';
 import StickyTitle from './StickyTitle';
-import artistNames from '../utils/artistName';
+import { artistName } from '../utils/artists';
 
 const Gallery = ({ data, location }) => {
   const [on, toggle] = useState(false);
@@ -38,29 +41,25 @@ const Gallery = ({ data, location }) => {
   }, {});
 
   // imaage files with metadata for this Gallery
-  const thisGalleryFluid = data.allFile.edges.map(({ node }) => {
-    return (
-      <PictureBox
-        key={node.id}
-        fluid={node.childImageSharp.fluid}
-        alt={node.relativePath.split('.')[0]}
-        pathname={location.pathname}
-        meta={imageData[node.relativePath]}
-      />
-    );
-  });
+  const thisGalleryFluid = data.allFile.edges.map(({ node }) => (
+    <PictureBox
+      key={node.id}
+      fluid={node.childImageSharp.fluid}
+      alt={node.relativePath.split('.')[0]}
+      pathname={location.pathname}
+      meta={imageData[node.relativePath]}
+    />
+  ));
 
   // imaage files without metadata for this Gallery modal
-  const thisGalleryModal = data.allFile.edges.map(({ node }) => {
-    return (
-      <ModalBox
-        key={node.id}
-        fluid={node.childImageSharp.fluid}
-        alt={node.relativePath.split('.')[0]}
-        meta={imageData[node.relativePath]}
-      />
-    );
-  });
+  const thisGalleryModal = data.allFile.edges.map(({ node }) => (
+    <ModalBox
+      key={node.id}
+      fluid={node.childImageSharp.fluid}
+      alt={node.relativePath.split('.')[0]}
+      meta={imageData[node.relativePath]}
+    />
+  ));
 
   // modal event handler
   const onModalClick = idx => {
@@ -69,20 +68,17 @@ const Gallery = ({ data, location }) => {
   };
 
   // render gallery
-  const renderGallery = () => {
-    return thisGalleryFluid.map((picture, idx) => {
-      return (
-        <div key={picture.key} onClick={() => onModalClick(idx)}>
-          {picture}
-        </div>
-      );
-    });
-  };
+  const renderGallery = () =>
+    thisGalleryFluid.map((picture, idx) => (
+      <div key={picture.key} onClick={() => onModalClick(idx)}>
+        {picture}
+      </div>
+    ));
 
   // render title
   const title = () => {
     const value = Object.values(imageData)[0];
-    return isArtistPage ? artistNames[value.artist] : value.subject;
+    return isArtistPage ? artistName[value.artist] : value.subject;
   };
 
   return (

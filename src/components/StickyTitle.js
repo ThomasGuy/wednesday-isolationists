@@ -53,31 +53,40 @@ const Title = styled.div`
   #sale {
     color: var(--title);
     font-size: 0.7rem;
-    & > span { font-size: 0.6rem}
+    & > span {
+      font-size: 0.6rem;
+    }
 
     @media screen and (min-width: 368px) {
       font-size: 1rem;
-      & > span { font-size: 0.8rem}
+      & > span {
+        font-size: 0.8rem;
+      }
     }
 
     @media screen and (min-width: 768px) {
       font-size: 1.5rem;
-      & > span { font-size: 1rem}
+      & > span {
+        font-size: 1rem;
+      }
     }
   }
-
 `;
 
-const StickyTitle = ({ title, isArtist }) => {
-  return (
-
-    <Title className='sticky-inner' isArtist={isArtist}>
-      <div>
-        {title} {isArtist && <Link id="bio" to={`/biography/${title.split(' ')[0]}`}>biography</Link>}
-      </div>
-      <p id="sale">All pictures for sale from £50 <span>email artist</span></p>
-    </Title>
-  );
-};
+const StickyTitle = ({ title, isArtist }) => (
+  <Title className="sticky-inner" isArtist={isArtist}>
+    <div>
+      {title}{' '}
+      {isArtist && (
+        <Link id="bio" to={`/biography/${title.split(' ')[0]}`}>
+          biography
+        </Link>
+      )}
+    </div>
+    <p id="sale">
+      All pictures for sale from £50 <span>email artist</span>
+    </p>
+  </Title>
+);
 
 export default StickyTitle;

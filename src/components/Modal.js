@@ -32,7 +32,7 @@ const Modal = ({ closeModal, animation, pointerEvents, gallery, index }) => {
             return <Page key={key} style={{ ...animationPage }} />;
           })}
         </div>
-        <button onClick={() => closeModal(false)}>
+        <button type="button" onClick={() => closeModal(false)}>
           <FiX />
         </button>
       </ModalCard>
@@ -61,7 +61,7 @@ const ModalWrapper = ({ on, toggle, gallery, index }) => {
               key={key}
               index={index}
             />
-          ),
+          )
       )}
     </div>
   );
