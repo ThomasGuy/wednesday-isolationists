@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Title = styled.div`
   display: flex;
@@ -79,7 +80,8 @@ const StickyTitle = ({ title, isArtist }) => (
       {title}{' '}
       {isArtist && (
         <Link id="bio" to={`/biography/${title.split(' ')[0]}`}>
-          biography
+          contact&nbsp;&nbsp;{'  '}
+          <FaEnvelope />
         </Link>
       )}
     </div>

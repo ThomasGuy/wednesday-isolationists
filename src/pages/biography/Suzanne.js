@@ -86,7 +86,7 @@ function Biography() {
               Century Gallery Henley Upon Thames, Riverside Gallery Barnes and
               the Century Gallery Cambridge.
             </p>
-            <p>She paints in oil, acrylic and watercolour</p>
+            <p>She paints in oil, acrylic and watercolour.</p>
           </Col>
         </Row>
         <Row>
@@ -98,7 +98,7 @@ function Biography() {
             <ul>
               <li>
                 <a href="http://www.suzanneewart.com">
-                  Suzanne Ewart's website
+                  Suzanne Ewart's Website
                 </a>
               </li>
               <li>

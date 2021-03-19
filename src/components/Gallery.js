@@ -15,8 +15,8 @@ import { artistName } from '../utils/artists';
 const Gallery = ({ data, location }) => {
   const [on, toggle] = useState(false);
   const [index, setIndex] = useState(0);
-  const [isArtistPage] = useState(location.pathname.includes('artists'));
   const [isSticky, setSticky] = useState(false);
+  const isArtistPage = location.pathname.includes('artists');
   const ref = useRef(null);
 
   // stick the Artist Title Bar to the top of the page
@@ -32,7 +32,7 @@ const Gallery = ({ data, location }) => {
     return () => {
       window.removeEventListener('scroll', () => handleScroll);
     };
-  }, []);
+  }, [ref]);
 
   // Object for image metadata.. N.B. var 'bun' as in current bun
   const imageData = data.allMarkdownRemark.edges.reduce((acc, bun) => {
