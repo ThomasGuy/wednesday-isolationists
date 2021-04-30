@@ -57,11 +57,11 @@ function Biography() {
             <Title>
               <div>Suzanne Ewart</div>
             </Title>
-            <div className="bottom">
+            {/* <div className="bottom">
               <a href="http://www.suzanneewart.com/contact.html">
                 Please contact Suzanne here through her website
               </a>
-            </div>
+            </div> */}
           </Col>
         </Row>
 
@@ -91,16 +91,13 @@ function Biography() {
         </Row>
         <Row>
           <Col>
-            <p>
-              Suzanne's work can be seen on her website and through social
-              media.
-            </p>
+            <p>Suzanne's work can be seen through social media.</p>
             <ul>
-              <li>
+              {/* <li>
                 <a href="http://www.suzanneewart.com">
                   Suzanne Ewart's Website
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
                   id="social"

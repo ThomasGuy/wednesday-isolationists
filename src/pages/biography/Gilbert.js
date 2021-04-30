@@ -109,11 +109,11 @@ function Biography() {
           <Col>
             <p>Sculptures can be seen on the following websites.</p>
             <ul>
-              <li>
+              {/* <li>
                 <a href="http://www.gilbertwhyman.co.uk">
                   Gilbert Whyman Sculptor
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="http://www.rbs.org.uk">
                   Royal British Society of Sculptors
