@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { animated } from 'react-spring'
+import styled from 'styled-components';
+import { animated } from 'react-spring';
 
 export const GalleryLayout = styled(animated.div)`
   margin: 0 auto;
@@ -21,4 +21,4 @@ export const GalleryLayout = styled(animated.div)`
   @media screen and (min-width: 992px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-`
+`;

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Wednesday Isolationists`,
     description: `A collective of UK Artists had no name before the Covid Lockdown, but with this new way of working from home they became the 'Wednesday Isolationists'`,
-    author: `TWGuy`,
+    author: `TWGuy <twguy.weddev@gmail.com>`,
     siteUrl: 'https://wednesday-isolationists.co.uk',
   },
   plugins: [

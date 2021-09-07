@@ -2,10 +2,23 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
-  * {
+  html {
+    --red: #ff0000;
+    --black: #393939;
+    --grey: #3A3A3A;
+    --gray: var(--grey);
+    --lightGrey: #e1e1e1;
+    --lightGray: var(---lightGrey);
+    --offWhite: #ededed;
+    --title: #b88f83;
+    --maxWidth: 1000px;
+    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
     box-sizing: border-box;
-  }
 
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
   body {
     color: white;
     background-color: #282c34;
@@ -39,10 +52,10 @@ const GlobalStyle = createGlobalStyle`
 
   .sticky-wrapper {
     position: relative;
-    height: 3rem; /* We need to change this value */
+    height: 5rem; /* We need to change this value */
 
     @media screen and (min-width: 768px) {
-      height: 4rem;
+      height: 6rem;
     }
   }
 

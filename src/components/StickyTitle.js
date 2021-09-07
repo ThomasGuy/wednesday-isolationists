@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Title = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   background: #282c34;
   width: 100%;
   padding-top: 1rem;
@@ -33,12 +35,12 @@ const Title = styled.div`
     }
   }
 
-  & > a {
+  #bio {
     align-self: bottom;
     padding-left: 2rem;
     font-size: 0.7rem;
     text-decoration: none;
-    color: lightgrey;
+    color: var(--lightGrey);
 
     @media screen and (min-width: 368px) {
       font-size: 0.8rem;
@@ -48,16 +50,45 @@ const Title = styled.div`
       padding-left: 4rem;
     }
   }
+
+  #sale {
+    color: var(--title);
+    font-size: 0.7rem;
+    & > span {
+      font-size: 0.6rem;
+    }
+
+    @media screen and (min-width: 368px) {
+      font-size: 1rem;
+      & > span {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.5rem;
+      & > span {
+        font-size: 1rem;
+      }
+    }
+  }
 `;
 
-const StickyTitle = ({ title, isArtist }) => {
-  return (
-    <Title className='sticky-inner' isArtist={isArtist}>
-      <div>{title}</div>
-
-      {isArtist && <Link to={`/biography/${title.split(' ')[0]}`}>biography</Link>}
-    </Title>
-  );
-};
+const StickyTitle = ({ title, isArtist }) => (
+  <Title className="sticky-inner" isArtist={isArtist}>
+    <div>
+      {title}{' '}
+      {isArtist && (
+        <Link id="bio" to={`/biography/${title.split(' ')[0]}`}>
+          contact&nbsp;&nbsp;{'  '}
+          <FaEnvelope />
+        </Link>
+      )}
+    </div>
+    <p id="sale">
+      All pictures for sale from £50 <span>email artist</span>
+    </p>
+  </Title>
+);
 
 export default StickyTitle;

@@ -5,4 +5,5 @@ date: '2020-04-22'
 artist: 'Margaret'
 dimensions: '37x42 cm'
 slug: 'week7/Margaret.jpg'
+sold: 'true'
 ---

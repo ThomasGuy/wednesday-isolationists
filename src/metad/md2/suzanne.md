@@ -5,4 +5,5 @@ date: '2020-03-18'
 artist: 'Suzanne'
 dimensions: ''
 slug: 'week2/Suzanne.jpg'
+sold: 'true'
 ---

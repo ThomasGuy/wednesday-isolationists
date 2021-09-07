@@ -17,14 +17,16 @@ const ALL_FILES_QUERY = graphql`
 `;
 
 const useLists = () => {
-  let artists = new Set();
-  let subjectObj = {};
+  const artists = new Set();
+  const subjectObj = {};
   const { allMarkdownRemark } = useStaticQuery(ALL_FILES_QUERY);
   allMarkdownRemark.edges.forEach(({ node }) => {
-    let newArtist = node.frontmatter.artist;
-    let newSubject = node.frontmatter.subject;
-    if (newArtist) artists.add(newArtist);
-    if (newSubject) subjectObj[node.frontmatter.week] = newSubject;
+    const { week, artist, subject } = node.frontmatter;
+    if (artist) artists.add(artist);
+    if (subject) {
+      const key = parseInt(week.substring(4));
+      subjectObj[key] = subject;
+    }
   });
 
   return [[...artists].sort(), subjectObj];

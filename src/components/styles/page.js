@@ -66,6 +66,9 @@ export const Col = styled.div`
         background-color: #242424;
       }
     }
+    #social {
+      margin-right: 1rem;
+    }
   }
 `;
 
